@@ -7,17 +7,18 @@
 <link rel="start" href="../../index.html" title="Asio">
 <link rel="up" href="../reference.html" title="Reference">
 <link rel="prev" href="SocketAcceptorService.html" title="Socket acceptor service requirements">
-<link rel="next" href="StreamSocketService.html" title="Stream socket service requirements">
+<link rel="next" href="StreamDescriptorService.html" title="Stream descriptor service requirements">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr><td valign="top"><img alt="asio C++ library" width="250" height="60" src="../../asio.png"></td></tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="SocketAcceptorService.html"><img src="../../prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html"><img src="../../up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../home.png" alt="Home"></a><a accesskey="n" href="StreamSocketService.html"><img src="../../next.png" alt="Next"></a>
+<a accesskey="p" href="SocketAcceptorService.html"><img src="../../prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html"><img src="../../up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../home.png" alt="Home"></a><a accesskey="n" href="StreamDescriptorService.html"><img src="../../next.png" alt="Next"></a>
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="asio.reference.SocketService"></a><a class="link" href="SocketService.html" title="Socket service requirements"> Socket service requirements</a></h3></div></div></div>
+<a name="asio.reference.SocketService"></a><a class="link" href="SocketService.html" title="Socket service requirements"> Socket service requirements</a>
+</h3></div></div></div>
 <p>
         A socket service must meet the requirements for an <a class="link" href="IoObjectService.html" title="I/O object service requirements">I/O
         object service</a>, as well as the additional requirements listed below.
@@ -45,7 +46,7 @@
         denote identifiers.
       </p>
 <div class="table">
-<a name="id2090275"></a><p class="title"><b>Table 18. SocketService requirements</b></p>
+<a name="id644200"></a><p class="title"><b>Table 27. SocketService requirements</b></p>
 <div class="table-contents"><table class="table" summary="SocketService requirements">
 <colgroup>
 <col>
@@ -129,8 +130,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">open</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">p</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">open</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">p</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -151,8 +151,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">assign</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">p</span><span class="special">,</span> <span class="identifier">n</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">assign</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">p</span><span class="special">,</span> <span class="identifier">n</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -173,8 +172,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">is_open</span><span class="special">(</span><span class="identifier">b</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">is_open</span><span class="special">(</span><span class="identifier">b</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -194,8 +192,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
 <span class="keyword">const</span> <span class="identifier">X</span><span class="special">::</span><span class="identifier">implementation_type</span><span class="special">&amp;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">b</span><span class="special">;</span>
 <span class="identifier">u</span><span class="special">.</span><span class="identifier">is_open</span><span class="special">(</span><span class="identifier">v</span><span class="special">);</span>
 </pre>
@@ -217,8 +214,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">close</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">close</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -243,8 +239,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">native</span><span class="special">(</span><span class="identifier">b</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">native</span><span class="special">(</span><span class="identifier">b</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -264,8 +259,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">cancel</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">cancel</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -289,8 +283,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">set_option</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">s</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">set_option</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">s</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -311,8 +304,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">get_option</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">g</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">get_option</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">g</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -333,8 +325,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
 <span class="keyword">const</span> <span class="identifier">X</span><span class="special">::</span><span class="identifier">implementation_type</span><span class="special">&amp;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">b</span><span class="special">;</span>
 <span class="identifier">u</span><span class="special">.</span><span class="identifier">get_option</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span> <span class="identifier">g</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
@@ -357,8 +348,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">io_control</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">i</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">io_control</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">i</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -379,8 +369,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">at_mark</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">at_mark</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -401,8 +390,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
 <span class="keyword">const</span> <span class="identifier">X</span><span class="special">::</span><span class="identifier">implementation_type</span><span class="special">&amp;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">b</span><span class="special">;</span>
 <span class="identifier">u</span><span class="special">.</span><span class="identifier">at_mark</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
@@ -425,8 +413,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">available</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">available</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -447,8 +434,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
 <span class="keyword">const</span> <span class="identifier">X</span><span class="special">::</span><span class="identifier">implementation_type</span><span class="special">&amp;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">b</span><span class="special">;</span>
 <span class="identifier">u</span><span class="special">.</span><span class="identifier">available</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
@@ -471,8 +457,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="keyword">typename</span> <span class="identifier">Protocol</span><span class="special">::</span><span class="identifier">endpoint</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">e</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="keyword">typename</span> <span class="identifier">Protocol</span><span class="special">::</span><span class="identifier">endpoint</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">e</span><span class="special">;</span>
 <span class="identifier">a</span><span class="special">.</span><span class="identifier">bind</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">u</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
@@ -494,8 +479,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">shutdown</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">h</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">shutdown</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">h</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -516,8 +500,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">local_endpoint</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">local_endpoint</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -538,8 +521,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
 <span class="keyword">const</span> <span class="identifier">X</span><span class="special">::</span><span class="identifier">implementation_type</span><span class="special">&amp;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">b</span><span class="special">;</span>
 <span class="identifier">u</span><span class="special">.</span><span class="identifier">local_endpoint</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
@@ -562,8 +544,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="identifier">a</span><span class="special">.</span><span class="identifier">remote_endpoint</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">a</span><span class="special">.</span><span class="identifier">remote_endpoint</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
             </p>
@@ -584,8 +565,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="identifier">X</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">a</span><span class="special">;</span>
 <span class="keyword">const</span> <span class="identifier">X</span><span class="special">::</span><span class="identifier">implementation_type</span><span class="special">&amp;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">b</span><span class="special">;</span>
 <span class="identifier">u</span><span class="special">.</span><span class="identifier">remote_endpoint</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
@@ -608,8 +588,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="keyword">typename</span> <span class="identifier">Protocol</span><span class="special">::</span><span class="identifier">endpoint</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">e</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="keyword">typename</span> <span class="identifier">Protocol</span><span class="special">::</span><span class="identifier">endpoint</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">e</span><span class="special">;</span>
 <span class="identifier">a</span><span class="special">.</span><span class="identifier">connect</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">u</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
 <p>
@@ -631,8 +610,7 @@
             <p>
               
 </p>
-<pre class="programlisting">
-<span class="keyword">const</span> <span class="keyword">typename</span> <span class="identifier">Protocol</span><span class="special">::</span><span class="identifier">endpoint</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">e</span><span class="special">;</span>
+<pre class="programlisting"><span class="keyword">const</span> <span class="keyword">typename</span> <span class="identifier">Protocol</span><span class="special">::</span><span class="identifier">endpoint</span><span class="special">&amp;</span> <span class="identifier">u</span> <span class="special">=</span> <span class="identifier">e</span><span class="special">;</span>
 <span class="identifier">a</span><span class="special">.</span><span class="identifier">async_connect</span><span class="special">(</span><span class="identifier">b</span><span class="special">,</span> <span class="identifier">u</span><span class="special">,</span> <span class="identifier">ch</span><span class="special">);</span>
 </pre>
 <p>
@@ -658,7 +636,7 @@
 </div>
 <br class="table-break">
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
@@ -668,7 +646,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="SocketAcceptorService.html"><img src="../../prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html"><img src="../../up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../home.png" alt="Home"></a><a accesskey="n" href="StreamSocketService.html"><img src="../../next.png" alt="Next"></a>
+<a accesskey="p" href="SocketAcceptorService.html"><img src="../../prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html"><img src="../../up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../home.png" alt="Home"></a><a accesskey="n" href="StreamDescriptorService.html"><img src="../../next.png" alt="Next"></a>
 </div>
 </body>
 </html>

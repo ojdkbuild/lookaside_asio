@@ -17,19 +17,19 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="asio.reference.basic_stream_socket"></a><a class="link" href="basic_stream_socket.html" title="basic_stream_socket"> basic_stream_socket</a></h3></div></div></div>
+<a name="asio.reference.basic_stream_socket"></a><a class="link" href="basic_stream_socket.html" title="basic_stream_socket"> basic_stream_socket</a>
+</h3></div></div></div>
 <p>
         Provides stream-oriented socket functionality.
       </p>
-<pre class="programlisting">
-<span class="keyword">template</span><span class="special">&lt;</span>
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
     <span class="keyword">typename</span> <a class="link" href="Protocol.html" title="Protocol requirements">Protocol</a><span class="special">,</span>
     <span class="keyword">typename</span> <a class="link" href="StreamSocketService.html" title="Stream socket service requirements">StreamSocketService</a> <span class="special">=</span> <span class="identifier">stream_socket_service</span><span class="special">&lt;</span><span class="identifier">Protocol</span><span class="special">&gt;&gt;</span>
 <span class="keyword">class</span> <span class="identifier">basic_stream_socket</span> <span class="special">:</span>
   <span class="keyword">public</span> <span class="identifier">basic_socket</span><span class="special">&lt;</span> <span class="identifier">Protocol</span><span class="special">,</span> <span class="identifier">StreamSocketService</span> <span class="special">&gt;</span>
 </pre>
 <a name="asio.reference.basic_stream_socket.types"></a><h5>
-<a name="id2205654"></a>
+<a name="id817463"></a>
         <a class="link" href="basic_stream_socket.html#asio.reference.basic_stream_socket.types">Types</a>
       </h5>
 <div class="informaltable"><table class="table">
@@ -308,7 +308,7 @@
 </tbody>
 </table></div>
 <a name="asio.reference.basic_stream_socket.member_functions"></a><h5>
-<a name="id2206289"></a>
+<a name="id818092"></a>
         <a class="link" href="basic_stream_socket.html#asio.reference.basic_stream_socket.member_functions">Member
         Functions</a>
       </h5>
@@ -682,7 +682,7 @@
 </tbody>
 </table></div>
 <a name="asio.reference.basic_stream_socket.data_members"></a><h5>
-<a name="id2207139"></a>
+<a name="id818925"></a>
         <a class="link" href="basic_stream_socket.html#asio.reference.basic_stream_socket.data_members">Data Members</a>
       </h5>
 <div class="informaltable"><table class="table">
@@ -753,12 +753,61 @@
 </tr>
 </tbody>
 </table></div>
+<a name="asio.reference.basic_stream_socket.protected_data_members"></a><h5>
+<a name="id819087"></a>
+        <a class="link" href="basic_stream_socket.html#asio.reference.basic_stream_socket.protected_data_members">Protected
+        Data Members</a>
+      </h5>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+              <p>
+                Name
+              </p>
+              </th>
+<th>
+              <p>
+                Description
+              </p>
+              </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+              <p>
+                <a class="link" href="basic_stream_socket/implementation.html" title="basic_stream_socket::implementation"><span class="bold"><strong>implementation</strong></span></a>
+              </p>
+              </td>
+<td>
+              <p>
+                The underlying implementation of the I/O object.
+              </p>
+              </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="basic_stream_socket/service.html" title="basic_stream_socket::service"><span class="bold"><strong>service</strong></span></a>
+              </p>
+              </td>
+<td>
+              <p>
+                The service associated with the I/O object.
+              </p>
+              </td>
+</tr>
+</tbody>
+</table></div>
 <p>
         The basic_stream_socket class template provides asynchronous and blocking
         stream-oriented socket functionality.
       </p>
 <a name="asio.reference.basic_stream_socket.thread_safety"></a><h5>
-<a name="id2207307"></a>
+<a name="id819199"></a>
         <a class="link" href="basic_stream_socket.html#asio.reference.basic_stream_socket.thread_safety">Thread Safety</a>
       </h5>
 <p>
@@ -770,7 +819,7 @@
         Unsafe.
       </p>
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying

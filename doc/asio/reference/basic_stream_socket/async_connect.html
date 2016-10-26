@@ -18,15 +18,15 @@
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a name="asio.reference.basic_stream_socket.async_connect"></a><a class="link" href="async_connect.html" title="basic_stream_socket::async_connect">
-        basic_stream_socket::async_connect</a></h4></div></div></div>
+        basic_stream_socket::async_connect</a>
+</h4></div></div></div>
 <p>
           <span class="emphasis"><em>Inherited from basic_socket.</em></span>
         </p>
 <p>
-          Start an asynchronous connect.
+          <a class="indexterm" name="id819729"></a> Start an asynchronous connect.
         </p>
-<pre class="programlisting">
-<span class="keyword">void</span> <span class="identifier">async_connect</span><span class="special">(</span>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">async_connect</span><span class="special">(</span>
     <span class="keyword">const</span> <span class="identifier">endpoint_type</span> <span class="special">&amp;</span> <span class="identifier">peer_endpoint</span><span class="special">,</span>
     <span class="identifier">ConnectHandler</span> <span class="identifier">handler</span><span class="special">);</span>
 </pre>
@@ -36,11 +36,11 @@
         </p>
 <p>
           The socket is automatically opened if it is not already open. If the connect
-          fails, and the socket was automatically opened, the socket is returned
+          fails, and the socket was automatically opened, the socket is not returned
           to the closed state.
         </p>
 <a name="asio.reference.basic_stream_socket.async_connect.parameters"></a><h6>
-<a name="id2207917"></a>
+<a name="id819821"></a>
           <a class="link" href="async_connect.html#asio.reference.basic_stream_socket.async_connect.parameters">Parameters</a>
         </h6>
 <div class="variablelist">
@@ -58,11 +58,9 @@
               will be made of the handler as required. The function signature of
               the handler must be: 
 </p>
-<pre class="programlisting">
-<span class="keyword">void</span> <span class="identifier">handler</span><span class="special">(</span>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">handler</span><span class="special">(</span>
   <span class="keyword">const</span> <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span><span class="special">&amp;</span> <span class="identifier">error</span> <span class="comment">// Result of operation
 </span><span class="special">);</span> 
-
 </pre>
 <p>
               Regardless of whether the asynchronous operation completes immediately
@@ -74,11 +72,10 @@
 </dl>
 </div>
 <a name="asio.reference.basic_stream_socket.async_connect.example"></a><h6>
-<a name="id2208037"></a>
+<a name="id819939"></a>
           <a class="link" href="async_connect.html#asio.reference.basic_stream_socket.async_connect.example">Example</a>
         </h6>
-<pre class="programlisting">
-<span class="keyword">void</span> <span class="identifier">connect_handler</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span><span class="special">&amp;</span> <span class="identifier">error</span><span class="special">)</span>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">connect_handler</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span><span class="special">&amp;</span> <span class="identifier">error</span><span class="special">)</span>
 <span class="special">{</span>
   <span class="keyword">if</span> <span class="special">(!</span><span class="identifier">error</span><span class="special">)</span>
   <span class="special">{</span>
@@ -94,7 +91,7 @@
 <span class="identifier">socket</span><span class="special">.</span><span class="identifier">async_connect</span><span class="special">(</span><span class="identifier">endpoint</span><span class="special">,</span> <span class="identifier">connect_handler</span><span class="special">);</span>
 </pre>
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying

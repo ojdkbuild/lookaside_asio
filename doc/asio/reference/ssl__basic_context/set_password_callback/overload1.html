@@ -18,12 +18,12 @@
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h5 class="title">
 <a name="asio.reference.ssl__basic_context.set_password_callback.overload1"></a><a class="link" href="overload1.html" title="ssl::basic_context::set_password_callback (1 of 2 overloads)">
-          ssl::basic_context::set_password_callback (1 of 2 overloads)</a></h5></div></div></div>
+          ssl::basic_context::set_password_callback (1 of 2 overloads)</a>
+</h5></div></div></div>
 <p>
             Set the password callback.
           </p>
-<pre class="programlisting">
-<span class="keyword">template</span><span class="special">&lt;</span>
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
     <span class="keyword">typename</span> <span class="identifier">PasswordCallback</span><span class="special">&gt;</span>
 <span class="keyword">void</span> <span class="identifier">set_password_callback</span><span class="special">(</span>
     <span class="identifier">PasswordCallback</span> <span class="identifier">callback</span><span class="special">);</span>
@@ -33,7 +33,7 @@
             information about an encrypted key in PEM format.
           </p>
 <a name="asio.reference.ssl__basic_context.set_password_callback.overload1.parameters"></a><h6>
-<a name="id2337218"></a>
+<a name="id1019127"></a>
             <a class="link" href="overload1.html#asio.reference.ssl__basic_context.set_password_callback.overload1.parameters">Parameters</a>
           </h6>
 <div class="variablelist">
@@ -45,12 +45,10 @@
                 The function object to be used for obtaining the password. The function
                 signature of the handler must be: 
 </p>
-<pre class="programlisting">
-<span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">password_callback</span><span class="special">(</span>
+<pre class="programlisting"><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">password_callback</span><span class="special">(</span>
   <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">max_length</span><span class="special">,</span>  <span class="comment">// The maximum size for a password.
 </span>  <span class="identifier">password_purpose</span> <span class="identifier">purpose</span> <span class="comment">// Whether password is for reading or writing.
 </span><span class="special">);</span> 
-
 </pre>
 <p>
                 The return value of the callback is a string containing the password.
@@ -59,7 +57,7 @@
 </dl>
 </div>
 <a name="asio.reference.ssl__basic_context.set_password_callback.overload1.exceptions"></a><h6>
-<a name="id2337343"></a>
+<a name="id1019251"></a>
             <a class="link" href="overload1.html#asio.reference.ssl__basic_context.set_password_callback.overload1.exceptions">Exceptions</a>
           </h6>
 <div class="variablelist">
@@ -72,7 +70,7 @@
 </dl>
 </div>
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying

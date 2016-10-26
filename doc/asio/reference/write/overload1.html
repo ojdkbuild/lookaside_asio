@@ -17,12 +17,12 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="asio.reference.write.overload1"></a><a class="link" href="overload1.html" title="write (1 of 6 overloads)"> write (1 of 6 overloads)</a></h4></div></div></div>
+<a name="asio.reference.write.overload1"></a><a class="link" href="overload1.html" title="write (1 of 6 overloads)"> write (1 of 6 overloads)</a>
+</h4></div></div></div>
 <p>
           Write all of the supplied data to a stream before returning.
         </p>
-<pre class="programlisting">
-<span class="keyword">template</span><span class="special">&lt;</span>
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
     <span class="keyword">typename</span> <a class="link" href="../SyncWriteStream.html" title="Buffer-oriented synchronous write stream requirements">SyncWriteStream</a><span class="special">,</span>
     <span class="keyword">typename</span> <a class="link" href="../ConstBufferSequence.html" title="Constant buffer sequence requirements">ConstBufferSequence</a><span class="special">&gt;</span>
 <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">write</span><span class="special">(</span>
@@ -47,7 +47,7 @@
           write_some function.
         </p>
 <a name="asio.reference.write.overload1.parameters"></a><h6>
-<a name="id2366055"></a>
+<a name="id1073183"></a>
           <a class="link" href="overload1.html#asio.reference.write.overload1.parameters">Parameters</a>
         </h6>
 <div class="variablelist">
@@ -67,14 +67,14 @@
 </dl>
 </div>
 <a name="asio.reference.write.overload1.return_value"></a><h6>
-<a name="id2366107"></a>
+<a name="id1073235"></a>
           <a class="link" href="overload1.html#asio.reference.write.overload1.return_value">Return Value</a>
         </h6>
 <p>
           The number of bytes transferred.
         </p>
 <a name="asio.reference.write.overload1.exceptions"></a><h6>
-<a name="id2366131"></a>
+<a name="id1073259"></a>
           <a class="link" href="overload1.html#asio.reference.write.overload1.exceptions">Exceptions</a>
         </h6>
 <div class="variablelist">
@@ -87,15 +87,14 @@
 </dl>
 </div>
 <a name="asio.reference.write.overload1.example"></a><h6>
-<a name="id2366169"></a>
+<a name="id1073297"></a>
           <a class="link" href="overload1.html#asio.reference.write.overload1.example">Example</a>
         </h6>
 <p>
           To write a single data buffer use the <a class="link" href="../buffer.html" title="buffer">buffer</a>
           function as follows:
         </p>
-<pre class="programlisting">
-<span class="identifier">asio</span><span class="special">::</span><span class="identifier">write</span><span class="special">(</span><span class="identifier">s</span><span class="special">,</span> <span class="identifier">asio</span><span class="special">::</span><span class="identifier">buffer</span><span class="special">(</span><span class="identifier">data</span><span class="special">,</span> <span class="identifier">size</span><span class="special">));</span> 
+<pre class="programlisting"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">write</span><span class="special">(</span><span class="identifier">s</span><span class="special">,</span> <span class="identifier">asio</span><span class="special">::</span><span class="identifier">buffer</span><span class="special">(</span><span class="identifier">data</span><span class="special">,</span> <span class="identifier">size</span><span class="special">));</span> 
 </pre>
 <p>
           See the <a class="link" href="../buffer.html" title="buffer">buffer</a> documentation
@@ -103,19 +102,18 @@
           with arrays, boost::array or std::vector.
         </p>
 <a name="asio.reference.write.overload1.remarks"></a><h6>
-<a name="id2366284"></a>
+<a name="id1073411"></a>
           <a class="link" href="overload1.html#asio.reference.write.overload1.remarks">Remarks</a>
         </h6>
 <p>
           This overload is equivalent to calling:
         </p>
-<pre class="programlisting">
-<span class="identifier">asio</span><span class="special">::</span><span class="identifier">write</span><span class="special">(</span>
+<pre class="programlisting"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">write</span><span class="special">(</span>
     <span class="identifier">s</span><span class="special">,</span> <span class="identifier">buffers</span><span class="special">,</span>
     <span class="identifier">asio</span><span class="special">::</span><span class="identifier">transfer_all</span><span class="special">());</span> 
 </pre>
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying

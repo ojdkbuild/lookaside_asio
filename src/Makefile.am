@@ -5,12 +5,14 @@ noinst_PROGRAMS = \
 	tests/performance/server \
 	tests/unit/basic_datagram_socket \
 	tests/unit/basic_deadline_timer \
+	tests/unit/basic_serial_port \
 	tests/unit/basic_socket_acceptor \
 	tests/unit/basic_stream_socket \
 	tests/unit/buffered_read_stream \
 	tests/unit/buffered_stream \
 	tests/unit/buffered_write_stream \
 	tests/unit/buffer \
+	tests/unit/buffers_iterator \
 	tests/unit/completion_condition \
 	tests/unit/datagram_socket_service \
 	tests/unit/deadline_timer_service \
@@ -35,15 +37,34 @@ noinst_PROGRAMS = \
 	tests/unit/ip/v6_only \
 	tests/unit/is_read_buffered \
 	tests/unit/is_write_buffered \
+	tests/unit/local/basic_endpoint \
+	tests/unit/local/connect_pair \
+	tests/unit/local/datagram_protocol \
+	tests/unit/local/stream_protocol \
 	tests/unit/placeholders \
+	tests/unit/posix/basic_descriptor \
+	tests/unit/posix/basic_stream_descriptor \
+	tests/unit/posix/descriptor_base \
+	tests/unit/posix/stream_descriptor \
+	tests/unit/posix/stream_descriptor_service \
 	tests/unit/read \
 	tests/unit/read_until \
+	tests/unit/serial_port \
+	tests/unit/serial_port_base \
+	tests/unit/serial_port_service \
 	tests/unit/socket_acceptor_service \
 	tests/unit/socket_base \
 	tests/unit/strand \
 	tests/unit/stream_socket_service \
 	tests/unit/thread \
 	tests/unit/time_traits \
+	tests/unit/windows/basic_handle \
+	tests/unit/windows/basic_random_access_handle \
+	tests/unit/windows/basic_stream_handle \
+	tests/unit/windows/random_access_handle \
+	tests/unit/windows/random_access_handle_service \
+	tests/unit/windows/stream_handle \
+	tests/unit/windows/stream_handle_service \
 	tests/unit/write \
 	examples/allocation/server \
 	examples/buffers/reference_counted \
@@ -65,6 +86,9 @@ noinst_PROGRAMS = \
 	examples/iostreams/daytime_server \
 	examples/multicast/receiver \
 	examples/multicast/sender \
+	examples/nonblocking/third_party_lib \
+	examples/porthopper/client \
+	examples/porthopper/server \
 	examples/services/daytime_client \
 	examples/socks4/sync_client \
 	examples/timeouts/accept_timeout \
@@ -85,6 +109,13 @@ noinst_PROGRAMS = \
 	examples/tutorial/daytime6/server \
 	examples/tutorial/daytime7/server
 
+if !WINDOWS_TARGET
+noinst_PROGRAMS += \
+	examples/local/connect_pair \
+	examples/local/stream_server \
+	examples/local/stream_client
+endif
+
 if HAVE_OPENSSL
 
 noinst_PROGRAMS += \
@@ -103,12 +134,14 @@ endif
 TESTS = \
 	tests/unit/basic_datagram_socket \
 	tests/unit/basic_deadline_timer \
+	tests/unit/basic_serial_port \
 	tests/unit/basic_socket_acceptor \
 	tests/unit/basic_stream_socket \
 	tests/unit/buffered_read_stream \
 	tests/unit/buffered_stream \
 	tests/unit/buffered_write_stream \
 	tests/unit/buffer \
+	tests/unit/buffers_iterator \
 	tests/unit/completion_condition \
 	tests/unit/datagram_socket_service \
 	tests/unit/deadline_timer_service \
@@ -133,15 +166,34 @@ TESTS = \
 	tests/unit/ip/v6_only \
 	tests/unit/is_read_buffered \
 	tests/unit/is_write_buffered \
+	tests/unit/local/basic_endpoint \
+	tests/unit/local/connect_pair \
+	tests/unit/local/datagram_protocol \
+	tests/unit/local/stream_protocol \
 	tests/unit/placeholders \
+	tests/unit/posix/basic_descriptor \
+	tests/unit/posix/basic_stream_descriptor \
+	tests/unit/posix/descriptor_base \
+	tests/unit/posix/stream_descriptor \
+	tests/unit/posix/stream_descriptor_service \
 	tests/unit/read \
 	tests/unit/read_until \
+	tests/unit/serial_port \
+	tests/unit/serial_port_base \
+	tests/unit/serial_port_service \
 	tests/unit/socket_acceptor_service \
 	tests/unit/socket_base \
 	tests/unit/strand \
 	tests/unit/stream_socket_service \
 	tests/unit/thread \
 	tests/unit/time_traits \
+	tests/unit/windows/basic_handle \
+	tests/unit/windows/basic_random_access_handle \
+	tests/unit/windows/basic_stream_handle \
+	tests/unit/windows/random_access_handle \
+	tests/unit/windows/random_access_handle_service \
+	tests/unit/windows/stream_handle \
+	tests/unit/windows/stream_handle_service \
 	tests/unit/write
 
 if HAVE_OPENSSL
@@ -171,9 +223,11 @@ tests_performance_client_SOURCES = tests/performance/client.cpp
 tests_performance_server_SOURCES = tests/performance/server.cpp
 tests_unit_basic_datagram_socket_SOURCES = tests/unit/basic_datagram_socket.cpp
 tests_unit_basic_deadline_timer_SOURCES = tests/unit/basic_deadline_timer.cpp
+tests_unit_basic_serial_port_SOURCES = tests/unit/basic_serial_port.cpp
 tests_unit_basic_socket_acceptor_SOURCES = tests/unit/basic_socket_acceptor.cpp
 tests_unit_basic_stream_socket_SOURCES = tests/unit/basic_stream_socket.cpp
 tests_unit_buffer_SOURCES = tests/unit/buffer.cpp
+tests_unit_buffers_iterator_SOURCES = tests/unit/buffers_iterator.cpp
 tests_unit_buffered_read_stream_SOURCES = tests/unit/buffered_read_stream.cpp
 tests_unit_buffered_stream_SOURCES = tests/unit/buffered_stream.cpp
 tests_unit_buffered_write_stream_SOURCES = tests/unit/buffered_write_stream.cpp
@@ -201,15 +255,34 @@ tests_unit_ip_unicast_SOURCES = tests/unit/ip/unicast.cpp
 tests_unit_ip_v6_only_SOURCES = tests/unit/ip/v6_only.cpp
 tests_unit_is_read_buffered_SOURCES = tests/unit/is_read_buffered.cpp
 tests_unit_is_write_buffered_SOURCES = tests/unit/is_write_buffered.cpp
+tests_unit_local_basic_endpoint_SOURCES = tests/unit/local/basic_endpoint.cpp
+tests_unit_local_connect_pair_SOURCES = tests/unit/local/connect_pair.cpp
+tests_unit_local_datagram_protocol_SOURCES = tests/unit/local/datagram_protocol.cpp
+tests_unit_local_stream_protocol_SOURCES = tests/unit/local/stream_protocol.cpp
 tests_unit_placeholders_SOURCES = tests/unit/placeholders.cpp
+tests_unit_posix_basic_descriptor_SOURCES = tests/unit/posix/basic_descriptor.cpp
+tests_unit_posix_basic_stream_descriptor_SOURCES = tests/unit/posix/basic_stream_descriptor.cpp
+tests_unit_posix_descriptor_base_SOURCES = tests/unit/posix/descriptor_base.cpp
+tests_unit_posix_stream_descriptor_SOURCES = tests/unit/posix/stream_descriptor.cpp
+tests_unit_posix_stream_descriptor_service_SOURCES = tests/unit/posix/stream_descriptor_service.cpp
 tests_unit_read_SOURCES = tests/unit/read.cpp
 tests_unit_read_until_SOURCES = tests/unit/read_until.cpp
+tests_unit_serial_port_SOURCES = tests/unit/serial_port.cpp
+tests_unit_serial_port_base_SOURCES = tests/unit/serial_port_base.cpp
+tests_unit_serial_port_service_SOURCES = tests/unit/serial_port_service.cpp
 tests_unit_socket_acceptor_service_SOURCES = tests/unit/socket_acceptor_service.cpp
 tests_unit_socket_base_SOURCES = tests/unit/socket_base.cpp
 tests_unit_strand_SOURCES = tests/unit/strand.cpp
 tests_unit_stream_socket_service_SOURCES = tests/unit/stream_socket_service.cpp
 tests_unit_thread_SOURCES = tests/unit/thread.cpp
 tests_unit_time_traits_SOURCES = tests/unit/time_traits.cpp
+tests_unit_windows_basic_handle_SOURCES = tests/unit/windows/basic_handle.cpp
+tests_unit_windows_basic_random_access_handle_SOURCES = tests/unit/windows/basic_random_access_handle.cpp
+tests_unit_windows_basic_stream_handle_SOURCES = tests/unit/windows/basic_stream_handle.cpp
+tests_unit_windows_random_access_handle_SOURCES = tests/unit/windows/random_access_handle.cpp
+tests_unit_windows_random_access_handle_service_SOURCES = tests/unit/windows/random_access_handle_service.cpp
+tests_unit_windows_stream_handle_SOURCES = tests/unit/windows/stream_handle.cpp
+tests_unit_windows_stream_handle_service_SOURCES = tests/unit/windows/stream_handle_service.cpp
 tests_unit_write_SOURCES = tests/unit/write.cpp
 examples_allocation_server_SOURCES = examples/allocation/server.cpp
 examples_buffers_reference_counted_SOURCES = examples/buffers/reference_counted.cpp
@@ -272,6 +345,9 @@ examples_iostreams_daytime_client_SOURCES = examples/iostreams/daytime_client.cp
 examples_iostreams_daytime_server_SOURCES = examples/iostreams/daytime_server.cpp
 examples_multicast_receiver_SOURCES = examples/multicast/receiver.cpp
 examples_multicast_sender_SOURCES = examples/multicast/sender.cpp
+examples_nonblocking_third_party_lib_SOURCES = examples/nonblocking/third_party_lib.cpp
+examples_porthopper_client_SOURCES = examples/porthopper/client.cpp
+examples_porthopper_server_SOURCES = examples/porthopper/server.cpp
 examples_services_daytime_client_SOURCES = \
 	examples/services/daytime_client.cpp \
 	examples/services/logger_service.cpp
@@ -293,6 +369,12 @@ examples_tutorial_daytime4_client_SOURCES = examples/tutorial/daytime4/client.cp
 examples_tutorial_daytime5_server_SOURCES = examples/tutorial/daytime5/server.cpp
 examples_tutorial_daytime6_server_SOURCES = examples/tutorial/daytime6/server.cpp
 examples_tutorial_daytime7_server_SOURCES = examples/tutorial/daytime7/server.cpp
+
+if !WINDOWS_TARGET
+examples_local_connect_pair_SOURCES = examples/local/connect_pair.cpp
+examples_local_stream_server_SOURCES = examples/local/stream_server.cpp
+examples_local_stream_client_SOURCES = examples/local/stream_client.cpp
+endif
 
 if HAVE_OPENSSL
 
@@ -341,6 +423,7 @@ EXTRA_DIST = \
 	examples/http/server3/request_parser.hpp \
 	examples/http/server3/server.hpp \
 	examples/http/server3/win_main.cpp \
+	examples/porthopper/protocol.hpp \
 	examples/serialization/client.cpp \
 	examples/serialization/server.cpp \
 	examples/serialization/connection.hpp \
@@ -354,7 +437,8 @@ EXTRA_DIST = \
 	examples/ssl/ca.pem \
 	examples/ssl/server.pem \
 	examples/ssl/dh512.pem \
-	examples/timers/tick_count_timer.cpp
+	examples/timers/tick_count_timer.cpp \
+	tests/performance/handler_allocator.hpp
 
 MAINTAINERCLEANFILES = \
 	$(srcdir)/Makefile.in

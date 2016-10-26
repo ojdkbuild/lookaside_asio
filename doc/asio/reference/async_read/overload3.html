@@ -18,13 +18,13 @@
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
 <a name="asio.reference.async_read.overload3"></a><a class="link" href="overload3.html" title="async_read (3 of 4 overloads)"> async_read (3
-        of 4 overloads)</a></h4></div></div></div>
+        of 4 overloads)</a>
+</h4></div></div></div>
 <p>
           Start an asynchronous operation to read a certain amount of data from a
           stream.
         </p>
-<pre class="programlisting">
-<span class="keyword">template</span><span class="special">&lt;</span>
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
     <span class="keyword">typename</span> <a class="link" href="../AsyncReadStream.html" title="Buffer-oriented asynchronous read stream requirements">AsyncReadStream</a><span class="special">,</span>
     <span class="keyword">typename</span> <span class="identifier">Allocator</span><span class="special">,</span>
     <span class="keyword">typename</span> <a class="link" href="../ReadHandler.html" title="Read handler requirements">ReadHandler</a><span class="special">&gt;</span>
@@ -47,7 +47,7 @@
           async_read_some function.
         </p>
 <a name="asio.reference.async_read.overload3.parameters"></a><h6>
-<a name="id2101970"></a>
+<a name="id659662"></a>
           <a class="link" href="overload3.html#asio.reference.async_read.overload3.parameters">Parameters</a>
         </h6>
 <div class="variablelist">
@@ -71,8 +71,7 @@
               will be made of the handler as required. The function signature of
               the handler must be: 
 </p>
-<pre class="programlisting">
-<span class="keyword">void</span> <span class="identifier">handler</span><span class="special">(</span>
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">handler</span><span class="special">(</span>
   <span class="keyword">const</span> <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span><span class="special">&amp;</span> <span class="identifier">error</span><span class="special">,</span> <span class="comment">// Result of operation.
 </span>
   <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">bytes_transferred</span>           <span class="comment">// Number of bytes copied into the
@@ -81,7 +80,6 @@
 </span>                                          <span class="comment">// bytes successfully transferred
 </span>                                          <span class="comment">// prior to the error.
 </span><span class="special">);</span> 
-
 </pre>
 <p>
               Regardless of whether the asynchronous operation completes immediately
@@ -93,20 +91,19 @@
 </dl>
 </div>
 <a name="asio.reference.async_read.overload3.remarks"></a><h6>
-<a name="id2102155"></a>
+<a name="id659847"></a>
           <a class="link" href="overload3.html#asio.reference.async_read.overload3.remarks">Remarks</a>
         </h6>
 <p>
           This overload is equivalent to calling:
         </p>
-<pre class="programlisting">
-<span class="identifier">asio</span><span class="special">::</span><span class="identifier">async_read</span><span class="special">(</span>
+<pre class="programlisting"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">async_read</span><span class="special">(</span>
     <span class="identifier">s</span><span class="special">,</span> <span class="identifier">b</span><span class="special">,</span>
     <span class="identifier">asio</span><span class="special">::</span><span class="identifier">transfer_all</span><span class="special">(),</span>
     <span class="identifier">handler</span><span class="special">);</span> 
 </pre>
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying

@@ -18,15 +18,15 @@
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h5 class="title">
 <a name="asio.reference.basic_socket_streambuf.io_control.overload2"></a><a class="link" href="overload2.html" title="basic_socket_streambuf::io_control (2 of 2 overloads)">
-          basic_socket_streambuf::io_control (2 of 2 overloads)</a></h5></div></div></div>
+          basic_socket_streambuf::io_control (2 of 2 overloads)</a>
+</h5></div></div></div>
 <p>
             <span class="emphasis"><em>Inherited from basic_socket.</em></span>
           </p>
 <p>
             Perform an IO control command on the socket.
           </p>
-<pre class="programlisting">
-<span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="identifier">io_control</span><span class="special">(</span>
+<pre class="programlisting"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="identifier">io_control</span><span class="special">(</span>
     <span class="identifier">IoControlCommand</span> <span class="special">&amp;</span> <span class="identifier">command</span><span class="special">,</span>
     <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="special">&amp;</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
@@ -34,7 +34,7 @@
             This function is used to execute an IO control command on the socket.
           </p>
 <a name="asio.reference.basic_socket_streambuf.io_control.overload2.parameters"></a><h6>
-<a name="id2195663"></a>
+<a name="id806791"></a>
             <a class="link" href="overload2.html#asio.reference.basic_socket_streambuf.io_control.overload2.parameters">Parameters</a>
           </h6>
 <div class="variablelist">
@@ -51,14 +51,13 @@
 </dl>
 </div>
 <a name="asio.reference.basic_socket_streambuf.io_control.overload2.example"></a><h6>
-<a name="id2195714"></a>
+<a name="id806843"></a>
             <a class="link" href="overload2.html#asio.reference.basic_socket_streambuf.io_control.overload2.example">Example</a>
           </h6>
 <p>
             Getting the number of bytes ready to read:
           </p>
-<pre class="programlisting">
-<span class="identifier">asio</span><span class="special">::</span><span class="identifier">ip</span><span class="special">::</span><span class="identifier">tcp</span><span class="special">::</span><span class="identifier">socket</span> <span class="identifier">socket</span><span class="special">(</span><span class="identifier">io_service</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">ip</span><span class="special">::</span><span class="identifier">tcp</span><span class="special">::</span><span class="identifier">socket</span> <span class="identifier">socket</span><span class="special">(</span><span class="identifier">io_service</span><span class="special">);</span>
 <span class="special">...</span>
 <span class="identifier">asio</span><span class="special">::</span><span class="identifier">ip</span><span class="special">::</span><span class="identifier">tcp</span><span class="special">::</span><span class="identifier">socket</span><span class="special">::</span><span class="identifier">bytes_readable</span> <span class="identifier">command</span><span class="special">;</span>
 <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="identifier">ec</span><span class="special">;</span>
@@ -70,7 +69,7 @@
 <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">bytes_readable</span> <span class="special">=</span> <span class="identifier">command</span><span class="special">.</span><span class="identifier">get</span><span class="special">();</span>
 </pre>
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying

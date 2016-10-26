@@ -17,12 +17,13 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="asio.reference.io_service.post"></a><a class="link" href="post.html" title="io_service::post"> io_service::post</a></h4></div></div></div>
+<a name="asio.reference.io_service.post"></a><a class="link" href="post.html" title="io_service::post"> io_service::post</a>
+</h4></div></div></div>
 <p>
-          Request the io_service to invoke the given handler and return immediately.
+          <a class="indexterm" name="id890450"></a> Request the io_service to invoke the given handler and return
+          immediately.
         </p>
-<pre class="programlisting">
-<span class="keyword">template</span><span class="special">&lt;</span>
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
     <span class="keyword">typename</span> <a class="link" href="../CompletionHandler.html" title="Completion handler requirements">CompletionHandler</a><span class="special">&gt;</span>
 <span class="keyword">void</span> <span class="identifier">post</span><span class="special">(</span>
     <span class="identifier">CompletionHandler</span> <span class="identifier">handler</span><span class="special">);</span>
@@ -38,7 +39,7 @@
           currently being invoked.
         </p>
 <a name="asio.reference.io_service.post.parameters"></a><h6>
-<a name="id2271448"></a>
+<a name="id890544"></a>
           <a class="link" href="post.html#asio.reference.io_service.post.parameters">Parameters</a>
         </h6>
 <div class="variablelist">
@@ -51,9 +52,7 @@
               object as required. The function signature of the handler must be:
               
 </p>
-<pre class="programlisting">
-<span class="keyword">void</span> <span class="identifier">handler</span><span class="special">();</span> 
-
+<pre class="programlisting"><span class="keyword">void</span> <span class="identifier">handler</span><span class="special">();</span> 
 </pre>
 <p>
             </p>
@@ -61,7 +60,7 @@
 </dl>
 </div>
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying

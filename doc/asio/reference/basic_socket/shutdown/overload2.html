@@ -18,12 +18,12 @@
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h5 class="title">
 <a name="asio.reference.basic_socket.shutdown.overload2"></a><a class="link" href="overload2.html" title="basic_socket::shutdown (2 of 2 overloads)">
-          basic_socket::shutdown (2 of 2 overloads)</a></h5></div></div></div>
+          basic_socket::shutdown (2 of 2 overloads)</a>
+</h5></div></div></div>
 <p>
             Disable sends or receives on the socket.
           </p>
-<pre class="programlisting">
-<span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="identifier">shutdown</span><span class="special">(</span>
+<pre class="programlisting"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="identifier">shutdown</span><span class="special">(</span>
     <span class="identifier">shutdown_type</span> <span class="identifier">what</span><span class="special">,</span>
     <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="special">&amp;</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
@@ -32,7 +32,7 @@
             or both.
           </p>
 <a name="asio.reference.basic_socket.shutdown.overload2.parameters"></a><h6>
-<a name="id2165271"></a>
+<a name="id775478"></a>
             <a class="link" href="overload2.html#asio.reference.basic_socket.shutdown.overload2.parameters">Parameters</a>
           </h6>
 <div class="variablelist">
@@ -49,14 +49,13 @@
 </dl>
 </div>
 <a name="asio.reference.basic_socket.shutdown.overload2.example"></a><h6>
-<a name="id2165323"></a>
+<a name="id775529"></a>
             <a class="link" href="overload2.html#asio.reference.basic_socket.shutdown.overload2.example">Example</a>
           </h6>
 <p>
             Shutting down the send side of the socket:
           </p>
-<pre class="programlisting">
-<span class="identifier">asio</span><span class="special">::</span><span class="identifier">ip</span><span class="special">::</span><span class="identifier">tcp</span><span class="special">::</span><span class="identifier">socket</span> <span class="identifier">socket</span><span class="special">(</span><span class="identifier">io_service</span><span class="special">);</span>
+<pre class="programlisting"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">ip</span><span class="special">::</span><span class="identifier">tcp</span><span class="special">::</span><span class="identifier">socket</span> <span class="identifier">socket</span><span class="special">(</span><span class="identifier">io_service</span><span class="special">);</span>
 <span class="special">...</span>
 <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="identifier">ec</span><span class="special">;</span>
 <span class="identifier">socket</span><span class="special">.</span><span class="identifier">shutdown</span><span class="special">(</span><span class="identifier">asio</span><span class="special">::</span><span class="identifier">ip</span><span class="special">::</span><span class="identifier">tcp</span><span class="special">::</span><span class="identifier">socket</span><span class="special">::</span><span class="identifier">shutdown_send</span><span class="special">,</span> <span class="identifier">ec</span><span class="special">);</span>
@@ -66,7 +65,7 @@
 </span><span class="special">}</span>
 </pre>
 </div>
-<table width="100%"><tr>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
 <td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
