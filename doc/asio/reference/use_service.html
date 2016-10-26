@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>use_service</title>
 <link rel="stylesheet" href="../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
@@ -17,10 +17,10 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="asio.reference.use_service"></a><a class="link" href="use_service.html" title="use_service"> use_service</a>
+<a name="asio.reference.use_service"></a><a class="link" href="use_service.html" title="use_service">use_service</a>
 </h3></div></div></div>
 <p>
-        <a class="indexterm" name="id1114741"></a>
+        <a class="indexterm" name="id1181276"></a>
       </p>
 <pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
     <span class="keyword">typename</span> <a class="link" href="Service.html" title="Service requirements">Service</a><span class="special">&gt;</span>
@@ -30,10 +30,11 @@
 <p>
         This function is used to locate a service object that corresponds to the
         given service type. If there is no existing implementation of the service,
-        then the io_service will create a new instance of the service.
+        then the <a class="link" href="io_service.html" title="io_service"><code class="computeroutput"><span class="identifier">io_service</span></code></a>
+        will create a new instance of the service.
       </p>
 <a name="asio.reference.use_service.parameters"></a><h5>
-<a name="id1114837"></a>
+<a name="id1181386"></a>
         <a class="link" href="use_service.html#asio.reference.use_service.parameters">Parameters</a>
       </h5>
 <div class="variablelist">
@@ -41,22 +42,33 @@
 <dl>
 <dt><span class="term">ios</span></dt>
 <dd><p>
-            The io_service object that owns the service.
-          </p></dd>
+              The <a class="link" href="io_service.html" title="io_service"><code class="computeroutput"><span class="identifier">io_service</span></code></a>
+              object that owns the service.
+            </p></dd>
 </dl>
 </div>
 <a name="asio.reference.use_service.return_value"></a><h5>
-<a name="id1114874"></a>
+<a name="id1181440"></a>
         <a class="link" href="use_service.html#asio.reference.use_service.return_value">Return Value</a>
       </h5>
 <p>
         The service interface implementing the specified service type. Ownership
         of the service interface is not transferred to the caller.
       </p>
+<a name="asio.reference.use_service.requirements"></a><h5>
+<a name="id1181464"></a>
+        <a class="link" href="use_service.html#asio.reference.use_service.requirements">Requirements</a>
+      </h5>
+<p>
+        <span class="bold"><strong>Header: </strong></span><code class="literal">asio/io_service.hpp</code>
+      </p>
+<p>
+        <span class="bold"><strong>Convenience header: </strong></span><code class="literal">asio.hpp</code>
+      </p>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
-<td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2003 - 2010 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
         file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
       </p>

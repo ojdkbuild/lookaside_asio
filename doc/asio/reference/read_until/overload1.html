@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>read_until (1 of 8 overloads)</title>
 <link rel="stylesheet" href="../../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
@@ -17,7 +17,7 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="asio.reference.read_until.overload1"></a><a class="link" href="overload1.html" title="read_until (1 of 8 overloads)"> read_until (1
+<a name="asio.reference.read_until.overload1"></a><a class="link" href="overload1.html" title="read_until (1 of 8 overloads)">read_until (1
         of 8 overloads)</a>
 </h4></div></div></div>
 <p>
@@ -38,11 +38,11 @@
         </p>
 <div class="itemizedlist"><ul type="disc">
 <li>
-            The get area of the streambuf contains the specified delimiter.
-          </li>
+              The get area of the streambuf contains the specified delimiter.
+            </li>
 <li>
-            An error occurred.
-          </li>
+              An error occurred.
+            </li>
 </ul></div>
 <p>
           This operation is implemented in terms of zero or more calls to the stream's
@@ -50,7 +50,7 @@
           the function returns immediately.
         </p>
 <a name="asio.reference.read_until.overload1.parameters"></a><h6>
-<a name="id1058290"></a>
+<a name="id1117951"></a>
           <a class="link" href="overload1.html#asio.reference.read_until.overload1.parameters">Parameters</a>
         </h6>
 <div class="variablelist">
@@ -58,21 +58,21 @@
 <dl>
 <dt><span class="term">s</span></dt>
 <dd><p>
-              The stream from which the data is to be read. The type must support
-              the SyncReadStream concept.
-            </p></dd>
+                The stream from which the data is to be read. The type must support
+                the SyncReadStream concept.
+              </p></dd>
 <dt><span class="term">b</span></dt>
 <dd><p>
-              A streambuf object into which the data will be read.
-            </p></dd>
+                A streambuf object into which the data will be read.
+              </p></dd>
 <dt><span class="term">delim</span></dt>
 <dd><p>
-              The delimiter character.
-            </p></dd>
+                The delimiter character.
+              </p></dd>
 </dl>
 </div>
 <a name="asio.reference.read_until.overload1.return_value"></a><h6>
-<a name="id1058353"></a>
+<a name="id1118018"></a>
           <a class="link" href="overload1.html#asio.reference.read_until.overload1.return_value">Return
           Value</a>
         </h6>
@@ -81,7 +81,7 @@
           delimiter.
         </p>
 <a name="asio.reference.read_until.overload1.exceptions"></a><h6>
-<a name="id1058378"></a>
+<a name="id1118043"></a>
           <a class="link" href="overload1.html#asio.reference.read_until.overload1.exceptions">Exceptions</a>
         </h6>
 <div class="variablelist">
@@ -89,12 +89,12 @@
 <dl>
 <dt><span class="term">asio::system_error</span></dt>
 <dd><p>
-              Thrown on failure.
-            </p></dd>
+                Thrown on failure.
+              </p></dd>
 </dl>
 </div>
 <a name="asio.reference.read_until.overload1.remarks"></a><h6>
-<a name="id1058416"></a>
+<a name="id1118082"></a>
           <a class="link" href="overload1.html#asio.reference.read_until.overload1.remarks">Remarks</a>
         </h6>
 <p>
@@ -103,7 +103,7 @@
           in the streambuf for a subsequent read_until operation to examine.
         </p>
 <a name="asio.reference.read_until.overload1.example"></a><h6>
-<a name="id1058442"></a>
+<a name="id1118107"></a>
           <a class="link" href="overload1.html#asio.reference.read_until.overload1.example">Example</a>
         </h6>
 <p>
@@ -115,10 +115,34 @@
 <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">line</span><span class="special">;</span>
 <span class="identifier">std</span><span class="special">::</span><span class="identifier">getline</span><span class="special">(</span><span class="identifier">is</span><span class="special">,</span> <span class="identifier">line</span><span class="special">);</span> 
 </pre>
+<p>
+          After the <code class="computeroutput"><span class="identifier">read_until</span></code> operation
+          completes successfully, the buffer <code class="computeroutput"><span class="identifier">b</span></code>
+          contains the delimiter:
+        </p>
+<pre class="programlisting"><span class="special">{</span> <span class="char">'a'</span><span class="special">,</span> <span class="char">'b'</span><span class="special">,</span> <span class="special">...,</span> <span class="char">'c'</span><span class="special">,</span> <span class="char">'\n'</span><span class="special">,</span> <span class="char">'d'</span><span class="special">,</span> <span class="char">'e'</span><span class="special">,</span> <span class="special">...</span> <span class="special">}</span> 
+</pre>
+<p>
+          The call to <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">getline</span></code> then extracts the data up to
+          and including the delimiter, so that the string <code class="computeroutput"><span class="identifier">line</span></code>
+          contains:
+        </p>
+<pre class="programlisting"><span class="special">{</span> <span class="char">'a'</span><span class="special">,</span> <span class="char">'b'</span><span class="special">,</span> <span class="special">...,</span> <span class="char">'c'</span><span class="special">,</span> <span class="char">'\n'</span> <span class="special">}</span> 
+</pre>
+<p>
+          The remaining data is left in the buffer <code class="computeroutput"><span class="identifier">b</span></code>
+          as follows:
+        </p>
+<pre class="programlisting"><span class="special">{</span> <span class="char">'d'</span><span class="special">,</span> <span class="char">'e'</span><span class="special">,</span> <span class="special">...</span> <span class="special">}</span> 
+</pre>
+<p>
+          This data may be the start of a new line, to be extracted by a subsequent
+          <code class="computeroutput"><span class="identifier">read_until</span></code> operation.
+        </p>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
-<td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2003 - 2010 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
         file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
       </p>

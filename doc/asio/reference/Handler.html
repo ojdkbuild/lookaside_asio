@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Handlers</title>
 <link rel="stylesheet" href="../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
@@ -17,7 +17,7 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="asio.reference.Handler"></a><a class="link" href="Handler.html" title="Handlers"> Handlers</a>
+<a name="asio.reference.Handler"></a><a class="link" href="Handler.html" title="Handlers">Handlers</a>
 </h3></div></div></div>
 <p>
         A handler must meet the requirements of <code class="computeroutput"><span class="identifier">CopyConstructible</span></code>
@@ -33,7 +33,7 @@
         denotes a function object taking no arguments.
       </p>
 <div class="table">
-<a name="id686344"></a><p class="title"><b>Table 13. Handler requirements</b></p>
+<a name="id690002"></a><p class="title"><b>Table&#160;13.&#160;Handler requirements</b></p>
 <div class="table-contents"><table class="table" summary="Handler requirements">
 <colgroup>
 <col>
@@ -42,99 +42,94 @@
 </colgroup>
 <thead><tr>
 <th>
-            <p>
-              expression
-            </p>
-            </th>
+                <p>
+                  expression
+                </p>
+              </th>
 <th>
-            <p>
-              return type
-            </p>
-            </th>
+                <p>
+                  return type
+                </p>
+              </th>
 <th>
-            <p>
-              assertion/note<br> pre/post-conditions
-            </p>
-            </th>
+                <p>
+                  assertion/note\npre/post-conditions
+                </p>
+              </th>
 </tr></thead>
 <tbody>
 <tr>
 <td>
-            <p>
-              
+                <p>
+                  
 </p>
 <pre class="programlisting"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">asio</span><span class="special">;</span>
 <span class="identifier">asio_handler_allocate</span><span class="special">(</span><span class="identifier">s</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">h</span><span class="special">);</span>
 </pre>
 <p>
-            </p>
-            </td>
+                </p>
+              </td>
 <td>
-            <p>
-              <code class="computeroutput"><span class="keyword">void</span><span class="special">*</span></code>
-            </p>
-            </td>
+                <p>
+                  <code class="computeroutput"><span class="keyword">void</span><span class="special">*</span></code>
+                </p>
+              </td>
 <td>
-            <p>
-              Returns a pointer to a block of memory of size <code class="computeroutput"><span class="identifier">s</span></code>.
-              The pointer must satisfy the same alignment requirements as a pointer
-              returned by <code class="computeroutput"><span class="special">::</span><span class="keyword">operator</span>
-              <span class="keyword">new</span><span class="special">()</span></code>.
-              Throws <code class="computeroutput"><span class="identifier">bad_alloc</span></code> on
-              failure.<br> <br> The <code class="computeroutput"><span class="identifier">asio_handler_allocate</span><span class="special">()</span></code> function is located using argument-dependent
-              lookup. The function <code class="computeroutput"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">asio_handler_allocate</span><span class="special">()</span></code> serves as a default if no user-supplied
-              function is available.
-            </p>
-            </td>
+                <p>
+                  Returns a pointer to a block of memory of size <code class="computeroutput"><span class="identifier">s</span></code>.
+                  The pointer must satisfy the same alignment requirements as a pointer
+                  returned by <code class="computeroutput"><span class="special">::</span><span class="keyword">operator</span>
+                  <span class="keyword">new</span><span class="special">()</span></code>.
+                  Throws <code class="computeroutput"><span class="identifier">bad_alloc</span></code>
+                  on failure.\n\n The <code class="computeroutput"><span class="identifier">asio_handler_allocate</span><span class="special">()</span></code> function is located using argument-dependent
+                  lookup. The function <code class="computeroutput"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">asio_handler_allocate</span><span class="special">()</span></code> serves as a default if no user-supplied
+                  function is available.
+                </p>
+              </td>
 </tr>
 <tr>
 <td>
-            <p>
-              
+                <p>
+                  
 </p>
 <pre class="programlisting"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">asio</span><span class="special">;</span>
 <span class="identifier">asio_handler_deallocate</span><span class="special">(</span><span class="identifier">p</span><span class="special">,</span> <span class="identifier">s</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">h</span><span class="special">);</span>
 </pre>
 <p>
-            </p>
-            </td>
+                </p>
+              </td>
 <td>
-            <p>
-            </p>
-            </td>
+              </td>
 <td>
-            <p>
-              Frees a block of memory associated with a pointer <code class="computeroutput"><span class="identifier">p</span></code>,
-              of at least size <code class="computeroutput"><span class="identifier">s</span></code>,
-              that was previously allocated using <code class="computeroutput"><span class="identifier">asio_handler_allocate</span><span class="special">()</span></code>.<br> <br> The <code class="computeroutput"><span class="identifier">asio_handler_deallocate</span><span class="special">()</span></code> function is located using argument-dependent
-              lookup. The function <code class="computeroutput"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">asio_handler_deallocate</span><span class="special">()</span></code> serves as a default if no user-supplied
-              function is available.
-            </p>
-            </td>
+                <p>
+                  Frees a block of memory associated with a pointer <code class="computeroutput"><span class="identifier">p</span></code>, of at least size <code class="computeroutput"><span class="identifier">s</span></code>, that was previously allocated
+                  using <code class="computeroutput"><span class="identifier">asio_handler_allocate</span><span class="special">()</span></code>.\n\n The <code class="computeroutput"><span class="identifier">asio_handler_deallocate</span><span class="special">()</span></code> function is located using argument-dependent
+                  lookup. The function <code class="computeroutput"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">asio_handler_deallocate</span><span class="special">()</span></code> serves as a default if no user-supplied
+                  function is available.
+                </p>
+              </td>
 </tr>
 <tr>
 <td>
-            <p>
-              
+                <p>
+                  
 </p>
 <pre class="programlisting"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">asio</span><span class="special">;</span>
 <span class="identifier">asio_handler_invoke</span><span class="special">(</span><span class="identifier">f</span><span class="special">,</span> <span class="special">&amp;</span><span class="identifier">h</span><span class="special">);</span>
 </pre>
 <p>
-            </p>
-            </td>
+                </p>
+              </td>
 <td>
-            <p>
-            </p>
-            </td>
+              </td>
 <td>
-            <p>
-              Causes the function object <code class="computeroutput"><span class="identifier">f</span></code>
-              to be executed as if by calling <code class="computeroutput"><span class="identifier">f</span><span class="special">()</span></code>.<br> <br> The <code class="computeroutput"><span class="identifier">asio_handler_invoke</span><span class="special">()</span></code> function is located using argument-dependent
-              lookup. The function <code class="computeroutput"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">asio_handler_invoke</span><span class="special">()</span></code> serves as a default if no user-supplied
-              function is available.
-            </p>
-            </td>
+                <p>
+                  Causes the function object <code class="computeroutput"><span class="identifier">f</span></code>
+                  to be executed as if by calling <code class="computeroutput"><span class="identifier">f</span><span class="special">()</span></code>.\n\n The <code class="computeroutput"><span class="identifier">asio_handler_invoke</span><span class="special">()</span></code> function is located using argument-dependent
+                  lookup. The function <code class="computeroutput"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">asio_handler_invoke</span><span class="special">()</span></code> serves as a default if no user-supplied
+                  function is available.
+                </p>
+              </td>
 </tr>
 </tbody>
 </table></div>
@@ -143,7 +138,7 @@
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
-<td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2003 - 2010 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
         file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
       </p>

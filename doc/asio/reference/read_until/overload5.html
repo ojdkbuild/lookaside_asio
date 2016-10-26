@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>read_until (5 of 8 overloads)</title>
 <link rel="stylesheet" href="../../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
@@ -17,7 +17,7 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="asio.reference.read_until.overload5"></a><a class="link" href="overload5.html" title="read_until (5 of 8 overloads)"> read_until (5
+<a name="asio.reference.read_until.overload5"></a><a class="link" href="overload5.html" title="read_until (5 of 8 overloads)">read_until (5
         of 8 overloads)</a>
 </h4></div></div></div>
 <p>
@@ -39,11 +39,11 @@
         </p>
 <div class="itemizedlist"><ul type="disc">
 <li>
-            A substring of the streambuf's get area matches the regular expression.
-          </li>
+              A substring of the streambuf's get area matches the regular expression.
+            </li>
 <li>
-            An error occurred.
-          </li>
+              An error occurred.
+            </li>
 </ul></div>
 <p>
           This operation is implemented in terms of zero or more calls to the stream's
@@ -51,7 +51,7 @@
           matches the regular expression, the function returns immediately.
         </p>
 <a name="asio.reference.read_until.overload5.parameters"></a><h6>
-<a name="id1060158"></a>
+<a name="id1120432"></a>
           <a class="link" href="overload5.html#asio.reference.read_until.overload5.parameters">Parameters</a>
         </h6>
 <div class="variablelist">
@@ -59,21 +59,21 @@
 <dl>
 <dt><span class="term">s</span></dt>
 <dd><p>
-              The stream from which the data is to be read. The type must support
-              the SyncReadStream concept.
-            </p></dd>
+                The stream from which the data is to be read. The type must support
+                the SyncReadStream concept.
+              </p></dd>
 <dt><span class="term">b</span></dt>
 <dd><p>
-              A streambuf object into which the data will be read.
-            </p></dd>
+                A streambuf object into which the data will be read.
+              </p></dd>
 <dt><span class="term">expr</span></dt>
 <dd><p>
-              The regular expression.
-            </p></dd>
+                The regular expression.
+              </p></dd>
 </dl>
 </div>
 <a name="asio.reference.read_until.overload5.return_value"></a><h6>
-<a name="id1060221"></a>
+<a name="id1120498"></a>
           <a class="link" href="overload5.html#asio.reference.read_until.overload5.return_value">Return
           Value</a>
         </h6>
@@ -82,7 +82,7 @@
           substring that matches the regular expression.
         </p>
 <a name="asio.reference.read_until.overload5.exceptions"></a><h6>
-<a name="id1060246"></a>
+<a name="id1120523"></a>
           <a class="link" href="overload5.html#asio.reference.read_until.overload5.exceptions">Exceptions</a>
         </h6>
 <div class="variablelist">
@@ -90,12 +90,12 @@
 <dl>
 <dt><span class="term">asio::system_error</span></dt>
 <dd><p>
-              Thrown on failure.
-            </p></dd>
+                Thrown on failure.
+              </p></dd>
 </dl>
 </div>
 <a name="asio.reference.read_until.overload5.remarks"></a><h6>
-<a name="id1060283"></a>
+<a name="id1120562"></a>
           <a class="link" href="overload5.html#asio.reference.read_until.overload5.remarks">Remarks</a>
         </h6>
 <p>
@@ -105,7 +105,7 @@
           operation to examine.
         </p>
 <a name="asio.reference.read_until.overload5.example"></a><h6>
-<a name="id1060309"></a>
+<a name="id1120588"></a>
           <a class="link" href="overload5.html#asio.reference.read_until.overload5.example">Example</a>
         </h6>
 <p>
@@ -117,10 +117,34 @@
 <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">line</span><span class="special">;</span>
 <span class="identifier">std</span><span class="special">::</span><span class="identifier">getline</span><span class="special">(</span><span class="identifier">is</span><span class="special">,</span> <span class="identifier">line</span><span class="special">);</span> 
 </pre>
+<p>
+          After the <code class="computeroutput"><span class="identifier">read_until</span></code> operation
+          completes successfully, the buffer <code class="computeroutput"><span class="identifier">b</span></code>
+          contains the data which matched the regular expression:
+        </p>
+<pre class="programlisting"><span class="special">{</span> <span class="char">'a'</span><span class="special">,</span> <span class="char">'b'</span><span class="special">,</span> <span class="special">...,</span> <span class="char">'c'</span><span class="special">,</span> <span class="char">'\r'</span><span class="special">,</span> <span class="char">'\n'</span><span class="special">,</span> <span class="char">'d'</span><span class="special">,</span> <span class="char">'e'</span><span class="special">,</span> <span class="special">...</span> <span class="special">}</span> 
+</pre>
+<p>
+          The call to <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">getline</span></code> then extracts the data up to
+          and including the match, so that the string <code class="computeroutput"><span class="identifier">line</span></code>
+          contains:
+        </p>
+<pre class="programlisting"><span class="special">{</span> <span class="char">'a'</span><span class="special">,</span> <span class="char">'b'</span><span class="special">,</span> <span class="special">...,</span> <span class="char">'c'</span><span class="special">,</span> <span class="char">'\r'</span><span class="special">,</span> <span class="char">'\n'</span> <span class="special">}</span> 
+</pre>
+<p>
+          The remaining data is left in the buffer <code class="computeroutput"><span class="identifier">b</span></code>
+          as follows:
+        </p>
+<pre class="programlisting"><span class="special">{</span> <span class="char">'d'</span><span class="special">,</span> <span class="char">'e'</span><span class="special">,</span> <span class="special">...</span> <span class="special">}</span> 
+</pre>
+<p>
+          This data may be the start of a new line, to be extracted by a subsequent
+          <code class="computeroutput"><span class="identifier">read_until</span></code> operation.
+        </p>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
-<td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2003 - 2010 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
         file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
       </p>

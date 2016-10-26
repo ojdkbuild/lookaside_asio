@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>TCP, UDP and ICMP</title>
 <link rel="stylesheet" href="../../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
@@ -17,14 +17,14 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="asio.overview.networking.protocols"></a><a class="link" href="protocols.html" title="TCP, UDP and ICMP"> TCP, UDP and ICMP</a>
+<a name="asio.overview.networking.protocols"></a><a class="link" href="protocols.html" title="TCP, UDP and ICMP">TCP, UDP and ICMP</a>
 </h4></div></div></div>
 <p>
           Asio provides off-the-shelf support for the internet protocols TCP, UDP
           and ICMP.
         </p>
 <a name="asio.overview.networking.protocols.tcp_clients"></a><h6>
-<a name="id623941"></a>
+<a name="id625507"></a>
           <a class="link" href="protocols.html#asio.overview.networking.protocols.tcp_clients">TCP Clients</a>
         </h6>
 <p>
@@ -64,7 +64,7 @@
           and <a class="link" href="../../reference/async_write.html" title="async_write">async_write()</a>.
         </p>
 <a name="asio.overview.networking.protocols.tcp_servers"></a><h6>
-<a name="id624433"></a>
+<a name="id625999"></a>
           <a class="link" href="protocols.html#asio.overview.networking.protocols.tcp_servers">TCP Servers</a>
         </h6>
 <p>
@@ -80,7 +80,7 @@
           to as illustrated for TCP clients above.
         </p>
 <a name="asio.overview.networking.protocols.udp"></a><h6>
-<a name="id624579"></a>
+<a name="id626146"></a>
           <a class="link" href="protocols.html#asio.overview.networking.protocols.udp">UDP</a>
         </h6>
 <p>
@@ -112,14 +112,14 @@
           member functions.
         </p>
 <a name="asio.overview.networking.protocols.icmp"></a><h6>
-<a name="id624947"></a>
+<a name="id626514"></a>
           <a class="link" href="protocols.html#asio.overview.networking.protocols.icmp">ICMP</a>
         </h6>
 <p>
           As with TCP and UDP, ICMP hostname resolution is performed using a resolver:
         </p>
 <pre class="programlisting"><span class="identifier">ip</span><span class="special">::</span><span class="identifier">icmp</span><span class="special">::</span><span class="identifier">resolver</span> <span class="identifier">resolver</span><span class="special">(</span><span class="identifier">my_io_service</span><span class="special">);</span>
-<span class="identifier">ip</span><span class="special">::</span><span class="identifier">icmp</span><span class="special">::</span><span class="identifier">resolver</span><span class="special">::</span><span class="identifier">query</span> <span class="identifier">query</span><span class="special">(</span><span class="string">"localhost"</span><span class="special">,</span> <span class="string">"daytime"</span><span class="special">);</span>
+<span class="identifier">ip</span><span class="special">::</span><span class="identifier">icmp</span><span class="special">::</span><span class="identifier">resolver</span><span class="special">::</span><span class="identifier">query</span> <span class="identifier">query</span><span class="special">(</span><span class="string">"localhost"</span><span class="special">,</span> <span class="string">""</span><span class="special">);</span>
 <span class="identifier">ip</span><span class="special">::</span><span class="identifier">icmp</span><span class="special">::</span><span class="identifier">resolver</span><span class="special">::</span><span class="identifier">iterator</span> <span class="identifier">iter</span> <span class="special">=</span> <span class="identifier">resolver</span><span class="special">.</span><span class="identifier">resolve</span><span class="special">(</span><span class="identifier">query</span><span class="special">);</span>
 <span class="special">...</span>
 </pre>
@@ -139,14 +139,10 @@
           <a class="link" href="../../reference/basic_raw_socket/async_receive_from.html" title="basic_raw_socket::async_receive_from">async_receive_from()</a>,
           <a class="link" href="../../reference/basic_raw_socket/send_to.html" title="basic_raw_socket::send_to">send_to()</a>
           or <a class="link" href="../../reference/basic_raw_socket/async_send_to.html" title="basic_raw_socket::async_send_to">async_send_to()</a>
-          member functions. For a connected ICMP socket, use the <a class="link" href="../../reference/basic_raw_socket/receive.html" title="basic_raw_socket::receive">receive()</a>,
-          <a class="link" href="../../reference/basic_raw_socket/async_receive.html" title="basic_raw_socket::async_receive">async_receive()</a>,
-          <a class="link" href="../../reference/basic_raw_socket/send.html" title="basic_raw_socket::send">send()</a> or
-          <a class="link" href="../../reference/basic_raw_socket/async_send.html" title="basic_raw_socket::async_send">async_send()</a>
           member functions.
         </p>
 <a name="asio.overview.networking.protocols.other_protocols"></a><h6>
-<a name="id625345"></a>
+<a name="id626891"></a>
           <a class="link" href="protocols.html#asio.overview.networking.protocols.other_protocols">Other
           Protocols</a>
         </h6>
@@ -156,18 +152,19 @@
           type requirements.
         </p>
 <a name="asio.overview.networking.protocols.see_also"></a><h6>
-<a name="id625376"></a>
+<a name="id626922"></a>
           <a class="link" href="protocols.html#asio.overview.networking.protocols.see_also">See Also</a>
         </h6>
 <p>
           <a class="link" href="../../reference/ip__tcp.html" title="ip::tcp">ip::tcp</a>, <a class="link" href="../../reference/ip__udp.html" title="ip::udp">ip::udp</a>,
           <a class="link" href="../../reference/ip__icmp.html" title="ip::icmp">ip::icmp</a>, <a class="link" href="../../tutorial/tutdaytime1.html" title="Daytime.1 - A synchronous TCP daytime client">daytime
-          protocol tutorials</a>.
+          protocol tutorials</a>, <a class="link" href="../../examples.html#asio.examples.icmp">ICMP ping
+          example</a>.
         </p>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
-<td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2003 - 2010 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
         file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
       </p>

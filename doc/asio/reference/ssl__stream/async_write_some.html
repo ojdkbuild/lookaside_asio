@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>ssl::stream::async_write_some</title>
 <link rel="stylesheet" href="../../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
@@ -17,10 +17,11 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="asio.reference.ssl__stream.async_write_some"></a><a class="link" href="async_write_some.html" title="ssl::stream::async_write_some"> ssl::stream::async_write_some</a>
+<a name="asio.reference.ssl__stream.async_write_some"></a><a class="link" href="async_write_some.html" title="ssl::stream::async_write_some">ssl::stream::async_write_some</a>
 </h4></div></div></div>
 <p>
-          <a class="indexterm" name="id1096595"></a> Start an asynchronous write.
+          <a class="indexterm" name="id1160687"></a> 
+Start an asynchronous write.
         </p>
 <pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
     <span class="keyword">typename</span> <a class="link" href="../ConstBufferSequence.html" title="Constant buffer sequence requirements">ConstBufferSequence</a><span class="special">,</span>
@@ -34,7 +35,7 @@
           to the stream. The function call always returns immediately.
         </p>
 <a name="asio.reference.ssl__stream.async_write_some.parameters"></a><h6>
-<a name="id1096727"></a>
+<a name="id1160819"></a>
           <a class="link" href="async_write_some.html#asio.reference.ssl__stream.async_write_some.parameters">Parameters</a>
         </h6>
 <div class="variablelist">
@@ -42,17 +43,17 @@
 <dl>
 <dt><span class="term">buffers</span></dt>
 <dd><p>
-              The data to be written to the stream. Although the buffers object may
-              be copied as necessary, ownership of the underlying buffers is retained
-              by the caller, which must guarantee that they remain valid until the
-              handler is called.
-            </p></dd>
+                The data to be written to the stream. Although the buffers object
+                may be copied as necessary, ownership of the underlying buffers is
+                retained by the caller, which must guarantee that they remain valid
+                until the handler is called.
+              </p></dd>
 <dt><span class="term">handler</span></dt>
 <dd>
 <p>
-              The handler to be called when the write operation completes. Copies
-              will be made of the handler as required. The equivalent function signature
-              of the handler must be: 
+                The handler to be called when the write operation completes. Copies
+                will be made of the handler as required. The equivalent function
+                signature of the handler must be: 
 </p>
 <pre class="programlisting"><span class="keyword">void</span> <span class="identifier">handler</span><span class="special">(</span>
   <span class="keyword">const</span> <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span><span class="special">&amp;</span> <span class="identifier">error</span><span class="special">,</span> <span class="comment">// Result of operation.
@@ -60,24 +61,23 @@
 </span><span class="special">);</span> 
 </pre>
 <p>
-            </p>
+              </p>
 </dd>
 </dl>
 </div>
 <a name="asio.reference.ssl__stream.async_write_some.remarks"></a><h6>
-<a name="id1096874"></a>
+<a name="id1160969"></a>
           <a class="link" href="async_write_some.html#asio.reference.ssl__stream.async_write_some.remarks">Remarks</a>
         </h6>
 <p>
           The async_write_some operation may not transmit all of the data to the
-          peer. Consider using the <a class="link" href="../async_write.html" title="async_write">async_write</a>
-          function if you need to ensure that all data is written before the blocking
-          operation completes.
+          peer. Consider using the <a class="link" href="../async_write.html" title="async_write"><code class="computeroutput"><span class="identifier">async_write</span></code></a> function if you need
+          to ensure that all data is written before the blocking operation completes.
         </p>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
-<td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2003 - 2010 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
         file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
       </p>

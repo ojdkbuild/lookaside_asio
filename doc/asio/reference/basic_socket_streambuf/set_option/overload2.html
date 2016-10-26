@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>basic_socket_streambuf::set_option (2 of 2 overloads)</title>
 <link rel="stylesheet" href="../../../../boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
@@ -17,8 +17,8 @@
 </div>
 <div class="section" lang="en">
 <div class="titlepage"><div><div><h5 class="title">
-<a name="asio.reference.basic_socket_streambuf.set_option.overload2"></a><a class="link" href="overload2.html" title="basic_socket_streambuf::set_option (2 of 2 overloads)">
-          basic_socket_streambuf::set_option (2 of 2 overloads)</a>
+<a name="asio.reference.basic_socket_streambuf.set_option.overload2"></a><a class="link" href="overload2.html" title="basic_socket_streambuf::set_option (2 of 2 overloads)">basic_socket_streambuf::set_option
+          (2 of 2 overloads)</a>
 </h5></div></div></div>
 <p>
             <span class="emphasis"><em>Inherited from basic_socket.</em></span>
@@ -26,7 +26,9 @@
 <p>
             Set an option on the socket.
           </p>
-<pre class="programlisting"><span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="identifier">set_option</span><span class="special">(</span>
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span>
+    <span class="keyword">typename</span> <a class="link" href="../../SettableSocketOption.html" title="Settable socket option requirements">SettableSocketOption</a><span class="special">&gt;</span>
+<span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="identifier">set_option</span><span class="special">(</span>
     <span class="keyword">const</span> <span class="identifier">SettableSocketOption</span> <span class="special">&amp;</span> <span class="identifier">option</span><span class="special">,</span>
     <span class="identifier">asio</span><span class="special">::</span><span class="identifier">error_code</span> <span class="special">&amp;</span> <span class="identifier">ec</span><span class="special">);</span>
 </pre>
@@ -34,7 +36,7 @@
             This function is used to set an option on the socket.
           </p>
 <a name="asio.reference.basic_socket_streambuf.set_option.overload2.parameters"></a><h6>
-<a name="id877646"></a>
+<a name="id901149"></a>
             <a class="link" href="overload2.html#asio.reference.basic_socket_streambuf.set_option.overload2.parameters">Parameters</a>
           </h6>
 <div class="variablelist">
@@ -42,16 +44,16 @@
 <dl>
 <dt><span class="term">option</span></dt>
 <dd><p>
-                The new option value to be set on the socket.
-              </p></dd>
+                  The new option value to be set on the socket.
+                </p></dd>
 <dt><span class="term">ec</span></dt>
 <dd><p>
-                Set to indicate what error occurred, if any.
-              </p></dd>
+                  Set to indicate what error occurred, if any.
+                </p></dd>
 </dl>
 </div>
 <a name="asio.reference.basic_socket_streambuf.set_option.overload2.example"></a><h6>
-<a name="id877696"></a>
+<a name="id901202"></a>
             <a class="link" href="overload2.html#asio.reference.basic_socket_streambuf.set_option.overload2.example">Example</a>
           </h6>
 <p>
@@ -70,7 +72,7 @@
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>
-<td align="right"><div class="copyright-footer">Copyright © 2003 - 2008 Christopher M. Kohlhoff<p>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2003 - 2010 Christopher M. Kohlhoff<p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
         file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
       </p>
