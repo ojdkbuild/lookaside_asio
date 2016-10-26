@@ -2,7 +2,7 @@
 // write.ipp
 // ~~~~~~~~~
 //
-// Copyright (c) 2003-2007 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2008 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -16,10 +16,6 @@
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
 #include "asio/detail/push_options.hpp"
-
-#include "asio/detail/push_options.hpp"
-#include <boost/optional.hpp>
-#include "asio/detail/pop_options.hpp"
 
 #include "asio/buffer.hpp"
 #include "asio/completion_condition.hpp"
@@ -128,25 +124,23 @@ namespace detail
         std::size_t bytes_transferred)
     {
       total_transferred_ += bytes_transferred;
-      buffers_->consume(bytes_transferred);
-      if ((*completion_condition_)(ec, total_transferred_)
-          || buffers_->begin() == buffers_->end())
+      buffers_.consume(bytes_transferred);
+      if (completion_condition_(ec, total_transferred_)
+          || buffers_.begin() == buffers_.end())
       {
-        buffers_.reset();
-        completion_condition_.reset();
         handler_(ec, total_transferred_);
       }
       else
       {
-        stream_.async_write_some(*buffers_, *this);
+        stream_.async_write_some(buffers_, *this);
       }
     }
 
   //private:
     AsyncWriteStream& stream_;
-    boost::optional<buffers_type> buffers_;
+    buffers_type buffers_;
     std::size_t total_transferred_;
-    boost::optional<CompletionCondition> completion_condition_;
+    CompletionCondition completion_condition_;
     WriteHandler handler_;
   };
 
