@@ -48,6 +48,7 @@ noinst_PROGRAMS = \
 	tests/unit/posix/stream_descriptor \
 	tests/unit/posix/stream_descriptor_service \
 	tests/unit/read \
+	tests/unit/read_at \
 	tests/unit/read_until \
 	tests/unit/serial_port \
 	tests/unit/serial_port_base \
@@ -61,11 +62,13 @@ noinst_PROGRAMS = \
 	tests/unit/windows/basic_handle \
 	tests/unit/windows/basic_random_access_handle \
 	tests/unit/windows/basic_stream_handle \
+	tests/unit/windows/overlapped_ptr \
 	tests/unit/windows/random_access_handle \
 	tests/unit/windows/random_access_handle_service \
 	tests/unit/windows/stream_handle \
 	tests/unit/windows/stream_handle_service \
 	tests/unit/write \
+	tests/unit/write_at \
 	examples/allocation/server \
 	examples/buffers/reference_counted \
 	examples/chat/chat_client \
@@ -111,9 +114,16 @@ noinst_PROGRAMS = \
 
 if !WINDOWS_TARGET
 noinst_PROGRAMS += \
+	examples/chat/posix_chat_client \
 	examples/local/connect_pair \
+	examples/local/iostream_client \
 	examples/local/stream_server \
 	examples/local/stream_client
+endif
+
+if WINDOWS_TARGET
+noinst_PROGRAMS += \
+	examples/windows/transmit_file
 endif
 
 if HAVE_OPENSSL
@@ -177,6 +187,7 @@ TESTS = \
 	tests/unit/posix/stream_descriptor \
 	tests/unit/posix/stream_descriptor_service \
 	tests/unit/read \
+	tests/unit/read_at \
 	tests/unit/read_until \
 	tests/unit/serial_port \
 	tests/unit/serial_port_base \
@@ -190,11 +201,13 @@ TESTS = \
 	tests/unit/windows/basic_handle \
 	tests/unit/windows/basic_random_access_handle \
 	tests/unit/windows/basic_stream_handle \
+	tests/unit/windows/overlapped_ptr \
 	tests/unit/windows/random_access_handle \
 	tests/unit/windows/random_access_handle_service \
 	tests/unit/windows/stream_handle \
 	tests/unit/windows/stream_handle_service \
-	tests/unit/write
+	tests/unit/write \
+	tests/unit/write_at
 
 if HAVE_OPENSSL
 
@@ -266,6 +279,7 @@ tests_unit_posix_descriptor_base_SOURCES = tests/unit/posix/descriptor_base.cpp
 tests_unit_posix_stream_descriptor_SOURCES = tests/unit/posix/stream_descriptor.cpp
 tests_unit_posix_stream_descriptor_service_SOURCES = tests/unit/posix/stream_descriptor_service.cpp
 tests_unit_read_SOURCES = tests/unit/read.cpp
+tests_unit_read_at_SOURCES = tests/unit/read_at.cpp
 tests_unit_read_until_SOURCES = tests/unit/read_until.cpp
 tests_unit_serial_port_SOURCES = tests/unit/serial_port.cpp
 tests_unit_serial_port_base_SOURCES = tests/unit/serial_port_base.cpp
@@ -279,11 +293,13 @@ tests_unit_time_traits_SOURCES = tests/unit/time_traits.cpp
 tests_unit_windows_basic_handle_SOURCES = tests/unit/windows/basic_handle.cpp
 tests_unit_windows_basic_random_access_handle_SOURCES = tests/unit/windows/basic_random_access_handle.cpp
 tests_unit_windows_basic_stream_handle_SOURCES = tests/unit/windows/basic_stream_handle.cpp
+tests_unit_windows_overlapped_ptr_SOURCES = tests/unit/windows/overlapped_ptr.cpp
 tests_unit_windows_random_access_handle_SOURCES = tests/unit/windows/random_access_handle.cpp
 tests_unit_windows_random_access_handle_service_SOURCES = tests/unit/windows/random_access_handle_service.cpp
 tests_unit_windows_stream_handle_SOURCES = tests/unit/windows/stream_handle.cpp
 tests_unit_windows_stream_handle_service_SOURCES = tests/unit/windows/stream_handle_service.cpp
 tests_unit_write_SOURCES = tests/unit/write.cpp
+tests_unit_write_at_SOURCES = tests/unit/write_at.cpp
 examples_allocation_server_SOURCES = examples/allocation/server.cpp
 examples_buffers_reference_counted_SOURCES = examples/buffers/reference_counted.cpp
 examples_chat_chat_client_SOURCES = examples/chat/chat_client.cpp
@@ -371,9 +387,15 @@ examples_tutorial_daytime6_server_SOURCES = examples/tutorial/daytime6/server.cp
 examples_tutorial_daytime7_server_SOURCES = examples/tutorial/daytime7/server.cpp
 
 if !WINDOWS_TARGET
+examples_chat_posix_chat_client_SOURCES = examples/chat/posix_chat_client.cpp
 examples_local_connect_pair_SOURCES = examples/local/connect_pair.cpp
+examples_local_iostream_client_SOURCES = examples/local/iostream_client.cpp
 examples_local_stream_server_SOURCES = examples/local/stream_server.cpp
 examples_local_stream_client_SOURCES = examples/local/stream_client.cpp
+endif
+
+if WINDOWS_TARGET
+examples_windows_transmit_file_SOURCES = examples/windows/transmit_file.cpp
 endif
 
 if HAVE_OPENSSL

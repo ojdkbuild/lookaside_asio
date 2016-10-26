@@ -13,6 +13,7 @@
 #include <boost/bind.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/enable_shared_from_this.hpp>
+#include <iostream>
 
 using asio::ip::tcp;
 
@@ -150,7 +151,7 @@ private:
 
     // Otherwise, an error occurred. Closing the socket cancels any outstanding
     // asynchronous read or write operations. The connection object will be
-    // destroyed once automatically once those outstanding operations complete.
+    // destroyed automatically once those outstanding operations complete.
     else
       socket_.close();
   }
@@ -170,7 +171,7 @@ private:
 
     // Otherwise, an error occurred. Closing the socket cancels any outstanding
     // asynchronous read or write operations. The connection object will be
-    // destroyed once automatically once those outstanding operations complete.
+    // destroyed automatically once those outstanding operations complete.
     else
       socket_.close();
   }
