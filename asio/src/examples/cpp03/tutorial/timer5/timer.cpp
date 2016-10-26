@@ -2,7 +2,7 @@
 // timer.cpp
 // ~~~~~~~~~
 //
-// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -28,14 +28,14 @@ public:
 
   ~printer()
   {
-    std::cout << "Final count is " << count_ << "\n";
+    std::cout << "Final count is " << count_ << std::endl;
   }
 
   void print1()
   {
     if (count_ < 10)
     {
-      std::cout << "Timer 1: " << count_ << "\n";
+      std::cout << "Timer 1: " << count_ << std::endl;
       ++count_;
 
       timer1_.expires_at(timer1_.expires_at() + boost::posix_time::seconds(1));
@@ -47,7 +47,7 @@ public:
   {
     if (count_ < 10)
     {
-      std::cout << "Timer 2: " << count_ << "\n";
+      std::cout << "Timer 2: " << count_ << std::endl;
       ++count_;
 
       timer2_.expires_at(timer2_.expires_at() + boost::posix_time::seconds(1));
@@ -56,7 +56,7 @@ public:
   }
 
 private:
-  asio::strand strand_;
+  asio::io_service::strand strand_;
   asio::deadline_timer timer1_;
   asio::deadline_timer timer2_;
   int count_;

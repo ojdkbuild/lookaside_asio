@@ -1,5 +1,5 @@
 [/
- / Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+ / Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
  /
  / Distributed under the Boost Software License, Version 1.0. (See accompanying
  / file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -120,7 +120,7 @@ Finally we print the obligatory `"Hello, world!"` message to show when the timer
 
 
 
-  ``''''''``  std::cout << "Hello, world!\n";
+  ``''''''``  std::cout << "Hello, world!" << std::endl;
 
   ``''''''``  return 0;
   ``''''''``}
@@ -142,7 +142,7 @@ Next: [link asio.tutorial.tuttimer2 Timer.2 - Using a timer asynchronously]
   ``''''''``// timer.cpp
   ``''''''``// ~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -159,7 +159,7 @@ Next: [link asio.tutorial.tuttimer2 Timer.2 - Using a timer asynchronously]
   ``''''''``  asio::deadline_timer t(io, boost::posix_time::seconds(5));
   ``''''''``  t.wait();
 
-  ``''''''``  std::cout << "Hello, world!\n";
+  ``''''''``  std::cout << "Hello, world!" << std::endl;
 
   ``''''''``  return 0;
   ``''''''``}
@@ -191,7 +191,7 @@ Using asio's asynchronous functionality means having a callback function that wi
 
   ``''''''``void print(const asio::error_code& /*e*/)
   ``''''''``{
-  ``''''''``  std::cout << "Hello, world!\n";
+  ``''''''``  std::cout << "Hello, world!" << std::endl;
   ``''''''``}
 
   ``''''''``int main()
@@ -242,7 +242,7 @@ Next: [link asio.tutorial.tuttimer3 Timer.3 - Binding arguments to a handler]
   ``''''''``// timer.cpp
   ``''''''``// ~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -254,7 +254,7 @@ Next: [link asio.tutorial.tuttimer3 Timer.3 - Binding arguments to a handler]
 
   ``''''''``void print(const asio::error_code& /*e*/)
   ``''''''``{
-  ``''''''``  std::cout << "Hello, world!\n";
+  ``''''''``  std::cout << "Hello, world!" << std::endl;
   ``''''''``}
 
   ``''''''``int main()
@@ -312,7 +312,7 @@ As mentioned above, this tutorial program uses a counter to stop running when th
 
   ``''''''``  if (*count < 5)
   ``''''''``  {
-  ``''''''``    std::cout << *count << "\n";
+  ``''''''``    std::cout << *count << std::endl;
   ``''''''``    ++(*count);
 
 
@@ -366,7 +366,7 @@ Finally, just to prove that the `count` variable was being used in the `print` h
 
 
 
-  ``''''''``  std::cout << "Final count is " << count << "\n";
+  ``''''''``  std::cout << "Final count is " << count << std::endl;
 
   ``''''''``  return 0;
   ``''''''``}
@@ -390,7 +390,7 @@ Next: [link asio.tutorial.tuttimer4 Timer.4 - Using a member function as a handl
   ``''''''``// timer.cpp
   ``''''''``// ~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -406,7 +406,7 @@ Next: [link asio.tutorial.tuttimer4 Timer.4 - Using a member function as a handl
   ``''''''``{
   ``''''''``  if (*count < 5)
   ``''''''``  {
-  ``''''''``    std::cout << *count << "\n";
+  ``''''''``    std::cout << *count << std::endl;
   ``''''''``    ++(*count);
 
   ``''''''``    t->expires_at(t->expires_at() + boost::posix_time::seconds(1));
@@ -426,7 +426,7 @@ Next: [link asio.tutorial.tuttimer4 Timer.4 - Using a member function as a handl
 
   ``''''''``  io.run();
 
-  ``''''''``  std::cout << "Final count is " << count << "\n";
+  ``''''''``  std::cout << "Final count is " << count << std::endl;
 
   ``''''''``  return 0;
   ``''''''``}
@@ -489,7 +489,7 @@ In the class destructor we will print out the final value of the counter.
 
   ``''''''``  ~printer()
   ``''''''``  {
-  ``''''''``    std::cout << "Final count is " << count_ << "\n";
+  ``''''''``    std::cout << "Final count is " << count_ << std::endl;
   ``''''''``  }
 
 
@@ -502,7 +502,7 @@ The `print` member function is very similar to the `print` function from tutoria
   ``''''''``  {
   ``''''''``    if (count_ < 5)
   ``''''''``    {
-  ``''''''``      std::cout << count_ << "\n";
+  ``''''''``      std::cout << count_ << std::endl;
   ``''''''``      ++count_;
 
   ``''''''``      timer_.expires_at(timer_.expires_at() + boost::posix_time::seconds(1));
@@ -551,7 +551,7 @@ Next: [link asio.tutorial.tuttimer5 Timer.5 - Synchronising handlers in multithr
   ``''''''``// timer.cpp
   ``''''''``// ~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -574,14 +574,14 @@ Next: [link asio.tutorial.tuttimer5 Timer.5 - Synchronising handlers in multithr
 
   ``''''''``  ~printer()
   ``''''''``  {
-  ``''''''``    std::cout << "Final count is " << count_ << "\n";
+  ``''''''``    std::cout << "Final count is " << count_ << std::endl;
   ``''''''``  }
 
   ``''''''``  void print()
   ``''''''``  {
   ``''''''``    if (count_ < 5)
   ``''''''``    {
-  ``''''''``      std::cout << count_ << "\n";
+  ``''''''``      std::cout << count_ << std::endl;
   ``''''''``      ++count_;
 
   ``''''''``      timer_.expires_at(timer_.expires_at() + boost::posix_time::seconds(1));
@@ -672,7 +672,7 @@ When initiating the asynchronous operations, each callback handler is "wrapped" 
 
   ``''''''``  ~printer()
   ``''''''``  {
-  ``''''''``    std::cout << "Final count is " << count_ << "\n";
+  ``''''''``    std::cout << "Final count is " << count_ << std::endl;
   ``''''''``  }
 
 
@@ -685,7 +685,7 @@ In a multithreaded program, the handlers for asynchronous operations should be s
   ``''''''``  {
   ``''''''``    if (count_ < 10)
   ``''''''``    {
-  ``''''''``      std::cout << "Timer 1: " << count_ << "\n";
+  ``''''''``      std::cout << "Timer 1: " << count_ << std::endl;
   ``''''''``      ++count_;
 
   ``''''''``      timer1_.expires_at(timer1_.expires_at() + boost::posix_time::seconds(1));
@@ -697,7 +697,7 @@ In a multithreaded program, the handlers for asynchronous operations should be s
   ``''''''``  {
   ``''''''``    if (count_ < 10)
   ``''''''``    {
-  ``''''''``      std::cout << "Timer 2: " << count_ << "\n";
+  ``''''''``      std::cout << "Timer 2: " << count_ << std::endl;
   ``''''''``      ++count_;
 
   ``''''''``      timer2_.expires_at(timer2_.expires_at() + boost::posix_time::seconds(1));
@@ -706,7 +706,7 @@ In a multithreaded program, the handlers for asynchronous operations should be s
   ``''''''``  }
 
   ``''''''``private:
-  ``''''''``  asio::strand strand_;
+  ``''''''``  asio::io_service::strand strand_;
   ``''''''``  asio::deadline_timer timer1_;
   ``''''''``  asio::deadline_timer timer2_;
   ``''''''``  int count_;
@@ -751,7 +751,7 @@ Previous: [link asio.tutorial.tuttimer4 Timer.4 - Using a member function as a h
   ``''''''``// timer.cpp
   ``''''''``// ~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -777,14 +777,14 @@ Previous: [link asio.tutorial.tuttimer4 Timer.4 - Using a member function as a h
 
   ``''''''``  ~printer()
   ``''''''``  {
-  ``''''''``    std::cout << "Final count is " << count_ << "\n";
+  ``''''''``    std::cout << "Final count is " << count_ << std::endl;
   ``''''''``  }
 
   ``''''''``  void print1()
   ``''''''``  {
   ``''''''``    if (count_ < 10)
   ``''''''``    {
-  ``''''''``      std::cout << "Timer 1: " << count_ << "\n";
+  ``''''''``      std::cout << "Timer 1: " << count_ << std::endl;
   ``''''''``      ++count_;
 
   ``''''''``      timer1_.expires_at(timer1_.expires_at() + boost::posix_time::seconds(1));
@@ -796,7 +796,7 @@ Previous: [link asio.tutorial.tuttimer4 Timer.4 - Using a member function as a h
   ``''''''``  {
   ``''''''``    if (count_ < 10)
   ``''''''``    {
-  ``''''''``      std::cout << "Timer 2: " << count_ << "\n";
+  ``''''''``      std::cout << "Timer 2: " << count_ << std::endl;
   ``''''''``      ++count_;
 
   ``''''''``      timer2_.expires_at(timer2_.expires_at() + boost::posix_time::seconds(1));
@@ -805,7 +805,7 @@ Previous: [link asio.tutorial.tuttimer4 Timer.4 - Using a member function as a h
   ``''''''``  }
 
   ``''''''``private:
-  ``''''''``  asio::strand strand_;
+  ``''''''``  asio::io_service::strand strand_;
   ``''''''``  asio::deadline_timer timer1_;
   ``''''''``  asio::deadline_timer timer2_;
   ``''''''``  int count_;
@@ -958,7 +958,7 @@ Next: [link asio.tutorial.tutdaytime2 Daytime.2 - A synchronous TCP daytime serv
   ``''''''``// client.cpp
   ``''''''``// ~~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -1117,7 +1117,7 @@ Next: [link asio.tutorial.tutdaytime3 Daytime.3 - An asynchronous TCP daytime se
   ``''''''``// server.cpp
   ``''''''``// ~~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -1369,7 +1369,7 @@ Next: [link asio.tutorial.tutdaytime4 Daytime.4 - A synchronous UDP daytime clie
   ``''''''``// server.cpp
   ``''''''``// ~~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -1590,7 +1590,7 @@ Next: [link asio.tutorial.tutdaytime5 Daytime.5 - A synchronous UDP daytime serv
   ``''''''``// client.cpp
   ``''''''``// ~~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -1733,7 +1733,7 @@ Next: [link asio.tutorial.tutdaytime6 Daytime.6 - An asynchronous UDP daytime se
   ``''''''``// server.cpp
   ``''''''``// ~~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -1952,7 +1952,7 @@ Next: [link asio.tutorial.tutdaytime7 Daytime.7 - A combined TCP/UDP asynchronou
   ``''''''``// server.cpp
   ``''''''``// ~~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -2231,7 +2231,7 @@ Previous: [link asio.tutorial.tutdaytime6 Daytime.6 - An asynchronous UDP daytim
   ``''''''``// server.cpp
   ``''''''``// ~~~~~~~~~~
   ``''''''``//
-  ``''''''``// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+  ``''''''``// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
   ``''''''``//
   ``''''''``// Distributed under the Boost Software License, Version 1.0. (See accompanying
   ``''''''``// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
