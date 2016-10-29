@@ -113,7 +113,7 @@ asio::error_code serial_port_base::baud_rate::store(
     ec = asio::error::invalid_argument;
     return ec;
   }
-# if defined(_BSD_SOURCE)
+# if defined(_BSD_SOURCE) && !defined(__ANDROID__)
   ::cfsetspeed(&storage, baud);
 # else
   ::cfsetispeed(&storage, baud);
