@@ -214,7 +214,7 @@
 /boost/asio/detail/wait_handler.hpp
 /boost/asio/detail/wait_op.hpp
 /boost/asio/detail/weak_ptr.hpp
-/boost/asio/detail/wince_thread.hpp
+/boost/asio/detail/winapi_thread.hpp
 /boost/asio/detail/win_event.hpp
 /boost/asio/detail/win_fd_set_adapter.hpp
 /boost/asio/detail/win_fenced_block.hpp
@@ -2874,6 +2874,9 @@
 /doc/html/boost_asio/reference/is_error_code_enum_lt__basic_errors__gt_/
 /doc/html/boost_asio/reference/is_error_code_enum_lt__basic_errors__gt_.html
 /doc/html/boost_asio/reference/is_error_code_enum_lt__basic_errors__gt_/value.html
+/doc/html/boost_asio/reference/is_error_code_enum_lt__boost__asio__ssl__error__stream_errors__gt_/
+/doc/html/boost_asio/reference/is_error_code_enum_lt__boost__asio__ssl__error__stream_errors__gt_.html
+/doc/html/boost_asio/reference/is_error_code_enum_lt__boost__asio__ssl__error__stream_errors__gt_/value.html
 /doc/html/boost_asio/reference/is_error_code_enum_lt__misc_errors__gt_/
 /doc/html/boost_asio/reference/is_error_code_enum_lt__misc_errors__gt_.html
 /doc/html/boost_asio/reference/is_error_code_enum_lt__misc_errors__gt_/value.html
@@ -3555,6 +3558,10 @@
 /doc/html/boost_asio/reference/ssl__context/use_tmp_dh.html
 /doc/html/boost_asio/reference/ssl__context/use_tmp_dh/overload1.html
 /doc/html/boost_asio/reference/ssl__context/use_tmp_dh/overload2.html
+/doc/html/boost_asio/reference/ssl__error__get_stream_category.html
+/doc/html/boost_asio/reference/ssl__error__make_error_code.html
+/doc/html/boost_asio/reference/ssl__error__stream_category.html
+/doc/html/boost_asio/reference/ssl__error__stream_errors.html
 /doc/html/boost_asio/reference/ssl__rfc2818_verification/
 /doc/html/boost_asio/reference/ssl__rfc2818_verification.html
 /doc/html/boost_asio/reference/ssl__rfc2818_verification/operator_lp__rp_.html
@@ -4379,7 +4386,7 @@
 /libs/asio/example/cpp03/ssl/
 /libs/asio/example/cpp03/ssl/ca.pem
 /libs/asio/example/cpp03/ssl/client.cpp
-/libs/asio/example/cpp03/ssl/dh512.pem
+/libs/asio/example/cpp03/ssl/dh2048.pem
 /libs/asio/example/cpp03/ssl/Jamfile
 /libs/asio/example/cpp03/ssl/Jamfile.v2
 /libs/asio/example/cpp03/ssl/README
@@ -4455,6 +4462,7 @@
 /libs/asio/example/cpp11/echo/blocking_udp_echo_server.cpp
 /libs/asio/example/cpp11/echo/Jamfile
 /libs/asio/example/cpp11/echo/Jamfile.v2
+/libs/asio/example/cpp11/executors/
 /libs/asio/example/cpp11/futures/
 /libs/asio/example/cpp11/futures/daytime_client.cpp
 /libs/asio/example/cpp11/futures/Jamfile
@@ -4483,6 +4491,8 @@
 /libs/asio/example/cpp11/spawn/
 /libs/asio/example/cpp11/spawn/echo_server.cpp
 /libs/asio/example/cpp11/spawn/Jamfile.v2
+/libs/asio/example/cpp14/
+/libs/asio/example/cpp14/executors/
 /libs/asio/index.html
 /libs/asio/meta/
 /libs/asio/meta/libraries.json

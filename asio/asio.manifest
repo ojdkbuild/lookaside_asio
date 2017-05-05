@@ -2947,6 +2947,10 @@
 /doc/asio/reference/ssl__context/use_tmp_dh.html
 /doc/asio/reference/ssl__context/use_tmp_dh/overload1.html
 /doc/asio/reference/ssl__context/use_tmp_dh/overload2.html
+/doc/asio/reference/ssl__error__get_stream_category.html
+/doc/asio/reference/ssl__error__make_error_code.html
+/doc/asio/reference/ssl__error__stream_category.html
+/doc/asio/reference/ssl__error__stream_errors.html
 /doc/asio/reference/ssl__rfc2818_verification/
 /doc/asio/reference/ssl__rfc2818_verification.html
 /doc/asio/reference/ssl__rfc2818_verification/operator_lp__rp_.html
@@ -3772,7 +3776,7 @@
 /include/asio/detail/wait_handler.hpp
 /include/asio/detail/wait_op.hpp
 /include/asio/detail/weak_ptr.hpp
-/include/asio/detail/wince_thread.hpp
+/include/asio/detail/winapi_thread.hpp
 /include/asio/detail/win_event.hpp
 /include/asio/detail/win_fd_set_adapter.hpp
 /include/asio/detail/win_fenced_block.hpp
@@ -4135,7 +4139,7 @@
 /src/examples/cpp03/ssl/
 /src/examples/cpp03/ssl/ca.pem
 /src/examples/cpp03/ssl/client.cpp
-/src/examples/cpp03/ssl/dh512.pem
+/src/examples/cpp03/ssl/dh2048.pem
 /src/examples/cpp03/ssl/README
 /src/examples/cpp03/ssl/server.cpp
 /src/examples/cpp03/ssl/server.pem
