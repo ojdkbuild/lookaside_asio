@@ -2,7 +2,7 @@
 // detail/config.hpp
 // ~~~~~~~~~~~~~~~~~
 //
-// Copyright (c) 2003-2015 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2016 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -804,15 +804,25 @@
 
 // Can use getaddrinfo() and getnameinfo().
 #if !defined(ASIO_HAS_GETADDRINFO)
-# if defined(ASIO_WINDOWS) || defined(__CYGWIN__)
-#  if defined(_WIN32_WINNT) && (_WIN32_WINNT >= 0x0501)
+# if !defined(ASIO_DISABLE_GETADDRINFO)
+#  if defined(ASIO_WINDOWS) || defined(__CYGWIN__)
+#   if defined(_WIN32_WINNT) && (_WIN32_WINNT >= 0x0501)
+#    define ASIO_HAS_GETADDRINFO 1
+#   elif defined(UNDER_CE)
+#    define ASIO_HAS_GETADDRINFO 1
+#   endif // defined(UNDER_CE)
+#  elif defined(__MACH__) && defined(__APPLE__)
+#   if defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
+#    if (__MAC_OS_X_VERSION_MIN_REQUIRED >= 1050)
+#     define ASIO_HAS_GETADDRINFO 1
+#    endif // (__MAC_OS_X_VERSION_MIN_REQUIRED >= 1050)
+#   else // defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
+#    define ASIO_HAS_GETADDRINFO 1
+#   endif // defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
+#  else // defined(__MACH__) && defined(__APPLE__)
 #   define ASIO_HAS_GETADDRINFO 1
-#  elif defined(UNDER_CE)
-#   define ASIO_HAS_GETADDRINFO 1
-#  endif // defined(UNDER_CE)
-# elif !(defined(__MACH__) && defined(__APPLE__))
-#  define ASIO_HAS_GETADDRINFO 1
-# endif // !(defined(__MACH__) && defined(__APPLE__))
+#  endif // defined(__MACH__) && defined(__APPLE__)
+# endif // !defined(ASIO_DISABLE_GETADDRINFO)
 #endif // !defined(ASIO_HAS_GETADDRINFO)
 
 // Whether standard iostreams are disabled.
